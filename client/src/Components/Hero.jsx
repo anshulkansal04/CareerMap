@@ -1,55 +1,40 @@
-import React from "react";
-import { FaBook, FaGraduationCap, FaLightbulb, FaAward } from "react-icons/fa";
-import "../App.css";
-
-const NavItem = ({ href, children }) => (
-    <a href={href} className="nav-item">
-        {children}
-    </a>
-);
-
-const EducationIcon = ({ Icon, text }) => (
-    <div className="education-icon">
-        <Icon className="icon" />
-        <span>{text}</span>
-    </div>
-);
-
-function App() {
-    return (
-        <div className="app">
-            <nav className="navbar">
-                <div className="navbar-container">
-                    <div className="nav-links">
-                        <NavItem href="#temp-a">Temp A</NavItem>
-                        <NavItem href="#temp-b">Temp B</NavItem>
-                        <NavItem href="#temp-c">Temp C</NavItem>
-                        <NavItem href="#temp-d">Temp D</NavItem>
-                    </div>
-                    <button className="login-button">Login / Sign Up</button>
-                    {/* <button className="menu-button">
-                        <Menu className="menu-icon" />
-                    </button> */}
-                </div>
-            </nav>
-
-            <main className="main-content">
-                <div className="hero">
-                    <h1 className="hero-title">Future-Ready Education Under NEP 2020</h1>
-                    <p className="hero-subtitle">
-                        Shaping Futures with Smart Career Guidance
-                    </p>
-                    <div className="education-icons">
-                        <EducationIcon Icon={FaBook} text="Personalized Learning" />
-                        <EducationIcon Icon={FaGraduationCap} text="Higher Education" />
-                        <EducationIcon Icon={FaLightbulb} text="Skill Development" />
-                        <EducationIcon Icon={FaAward} text="Scholarships" />
-                    </div>
-
-                </div>
-            </main>
+import React from 'react';
+import imgg from "../assets/1.png";
+export default function Component() {
+  return (
+    <div className="hero-container">
+      <header className="hero-header">
+        <div className="hero-logo-container">
+          <img src="/placeholder.svg" alt="Coreplus logo" className="hero-logo" />
+          <span className="hero-brand-name">coreplus</span>
         </div>
-    );
-}
+        <nav className="hero-nav">
+          <a href="#">FEATURES</a>
+          <a href="#">ADD ONS</a>
+          <a href="#">PRICING</a>
+          <a href="#">RESOURCES</a>
+          <a href="#">LOGIN</a>
+        </nav>
+        <a href="#" className="hero-cta-button">
+          FREE TRIAL
+        </a>
+      </header>
 
-export default App;
+      <main className="hero-main">
+        <div className="hero-content">
+          <h1>Digital health practice management</h1>
+          <p>
+            Healthcare practice management software that helps you acquire new
+            clients and retain existing ones.
+          </p>
+          <a href="#" className="hero-start-button">
+            GET STARTED
+          </a>
+        </div>
+        <div className="hero-image-container">
+          <img src={imgg} alt="Digital health practice management illustration" />
+        </div>
+      </main>
+    </div>
+  );
+}
