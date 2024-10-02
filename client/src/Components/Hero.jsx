@@ -1,25 +1,9 @@
-import React from 'react';
+import React from "react";
 import imgg from "../assets/1.png";
-export default function Component() {
+
+export default function Info() {
   return (
     <div className="hero-container">
-      <header className="hero-header">
-        <div className="hero-logo-container">
-          <img src="/placeholder.svg" alt="Coreplus logo" className="hero-logo" />
-          <span className="hero-brand-name">coreplus</span>
-        </div>
-        <nav className="hero-nav">
-          <a href="#">FEATURES</a>
-          <a href="#">ADD ONS</a>
-          <a href="#">PRICING</a>
-          <a href="#">RESOURCES</a>
-          <a href="#">LOGIN</a>
-        </nav>
-        <a href="#" className="hero-cta-button">
-          FREE TRIAL
-        </a>
-      </header>
-
       <main className="hero-main">
         <div className="hero-content">
           <h1>Digital health practice management</h1>
