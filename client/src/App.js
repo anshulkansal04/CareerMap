@@ -5,6 +5,7 @@ import SignUp from './pages/SignUp';
 import LoginPage from './pages/LoginPage';
 import { Toaster } from 'react-hot-toast';
 import Carousel from './Components/Carousel';
+import Card from './Components/Card'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <LoginPage />
       <Toaster />
       <Carousel />
+      <Card />
     </div>
   );
 }
