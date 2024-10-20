@@ -4,8 +4,11 @@ import { ArrowLeft } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import "./SignUp.css";
+import edu from "../assets/education.png";
+import grad from "../assets/graduation.png";
+import emb from "../assets/emblem.png"
 
-const SignUp = () => {
+export default function Component() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -197,24 +200,80 @@ const SignUp = () => {
                 <rect x="20" y="20" width="120" height="25" fill="#FF9933" />
                 <rect x="20" y="45" width="120" height="25" fill="#FFFFFF" />
                 <rect x="20" y="70" width="120" height="25" fill="#138808" />
+                
+                {/* Ashoka Chakra (more detailed and faster animation) */}
                 <circle cx="80" cy="57.5" r="10" fill="#000080" />
-                <motion.path
-                  d="M80 47.5 L82 67.5 L78 67.5 Z"
-                  fill="#000080"
-                  initial={{ rotate: 0 }}
-                  animate={{ rotate: 360 }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 20,
-                    ease: "linear",
-                  }}
-                />
+                <circle cx="80" cy="57.5" r="9" fill="#FFFFFF" />
+                {[...Array(24)].map((_, i) => (
+                  <React.Fragment key={i}>
+                    <motion.line
+                      x1="80"
+                      y1="48.5"
+                      x2="80"
+                      y2="51.5"
+                      stroke="#000080"
+                      strokeWidth="0.5"
+                      transform={`rotate(${i * 15} 80 57.5)`}
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: i * 0.02, duration: 0.2 }}
+                    />
+                    <motion.path
+                      d={`M80,57.5 L${80 + 7 * Math.cos((i * 15 * Math.PI) / 180)},${
+                        57.5 + 7 * Math.sin((i * 15 * Math.PI) / 180)
+                      }`}
+                      fill="none"
+                      stroke="#000080"
+                      strokeWidth="0.5"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ delay: 0.5 + i * 0.02, duration: 0.3 }}
+                    />
+                  </React.Fragment>
+                ))}
 
                 {/* Iconic Indian Educational Institution (inspired by IIT Delhi) */}
                 <rect x="200" y="150" width="400" height="200" fill="#d1d5db" />
+                
+                {/* Graduation image */}
                 <rect x="250" y="200" width="80" height="100" fill="#f3f4f6" />
+                <motion.image
+                  href={grad}
+                  x="250"
+                  y="200"
+                  width="80"
+                  height="100"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
+                />
+                
+                {/* National Emblem of India */}
                 <rect x="350" y="200" width="80" height="100" fill="#f3f4f6" />
+                <motion.image
+                  href={emb}
+                  x="350"
+                  y="200"
+                  width="80"
+                  height="100"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 1, duration: 0.5, type: "spring" }}
+                />
+                
+                {/* Education image */}
                 <rect x="450" y="200" width="80" height="100" fill="#f3f4f6" />
+                <motion.image
+                  href={edu}
+                  x="450"
+                  y="200"
+                  width="80"
+                  height="100"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 1.5, duration: 0.5, type: "spring" }}
+                />
+                
                 <path d="M200 150 L400 50 L600 150" fill="#ef4444" />
                 <rect x="380" y="300" width="40" height="50" fill="#a78bfa" />
 
@@ -231,9 +290,10 @@ const SignUp = () => {
                     initial={{ y: 450 }}
                     animate={{ y: 380 }}
                     transition={{
-                      delay: index * 0.2,
+                      delay: index * 0.1,
                       type: "spring",
-                      stiffness: 50,
+                      stiffness: 100,
+                      damping: 10,
                     }}
                   >
                     <circle cx={student.x} cy={0} r="20" fill="#fef3c7" />
@@ -264,35 +324,10 @@ const SignUp = () => {
                     fontSize="24"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 1 + index * 0.2 }}
+                    transition={{ delay: 0.5 + index * 0.1, duration: 0.3 }}
                   >
                     {item.symbol}
                   </motion.text>
-                ))}
-
-                {/* Ashoka Chakra (simplified) */}
-                <circle
-                  cx="80"
-                  cy="57.5"
-                  r="12"
-                  fill="none"
-                  stroke="#000080"
-                  strokeWidth="1"
-                />
-                {[...Array(24)].map((_, i) => (
-                  <motion.line
-                    key={i}
-                    x1="80"
-                    y1="45.5"
-                    x2="80"
-                    y2="51.5"
-                    stroke="#000080"
-                    strokeWidth="1"
-                    transform={`rotate(${i * 15}, 80, 57.5)`}
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 2 + i * 0.05 }}
-                  />
                 ))}
 
                 {/* Sanskrit Shloka */}
@@ -318,6 +353,4 @@ const SignUp = () => {
       </form>
     </div>
   );
-};
-
-export default SignUp;
+}
