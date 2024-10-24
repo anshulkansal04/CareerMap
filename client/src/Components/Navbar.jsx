@@ -1,23 +1,24 @@
 import React from "react";
-import './Navbar.css';
 
 export default function Navbar() {
   return (
-    <header className="navbar">
-      <div className="navbar-logo-container">
-        <img src="/placeholder.svg" alt="Coreplus logo" className="navbar-logo" />
-        <span className="navbar-brand-name">coreplus</span>
+    <header className="nep-navbar">
+      <div className="container nep-navbar-content">
+        <div className="nep-navbar-logo">
+          <img src="/placeholder.svg" alt="Coreplus logo" />
+          <span className="nep-navbar-brand">coreplus</span>
+        </div>
+        <nav className="nep-navbar-links">
+          <a href="#" className="nep-navbar-link">Features</a>
+          <a href="#" className="nep-navbar-link">Add Ons</a>
+          <a href="#" className="nep-navbar-link">Pricing</a>
+          <a href="#" className="nep-navbar-link">Resources</a>
+          <a href="#" className="nep-navbar-link">Login</a>
+        </nav>
+        <a href="#" className="nep-navbar-cta">
+          Free Trial
+        </a>
       </div>
-      <nav className="navbar-links">
-        <a href="#">FEATURES</a>
-        <a href="#">ADD ONS</a>
-        <a href="#">PRICING</a>
-        <a href="#">RESOURCES</a>
-        <a href="#">LOGIN</a>
-      </nav>
-      <a href="#" className="navbar-cta-button">
-        FREE TRIAL
-      </a>
     </header>
   );
 }
