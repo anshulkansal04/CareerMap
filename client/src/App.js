@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage';
 import { Toaster } from 'react-hot-toast';
 import Carousel from './Components/Carousel';
 import Card from './Components/Card'
+import Testimonal from './Components/Testimonal';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Toaster />
       <Carousel />
       <Card />
+      <Testimonal />
     </div>
   );
 }
