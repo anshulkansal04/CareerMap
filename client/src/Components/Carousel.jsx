@@ -18,7 +18,7 @@ const Carousel = () => {
   return (
     <div className="nep-carousel">
       <div className="container">
-        <h2 className="nep-carousel-title">Features of NEP 2020</h2>
+        <h2 className="nep-carousel-title">Info about NEP 2020</h2>
         <Slider {...settings}>
           <div className="nep-carousel-item">
             <h3 className="nep-carousel-item-title">New School Structure (5+3+3+4 Model)</h3>

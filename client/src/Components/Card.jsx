@@ -29,6 +29,7 @@ const CardContainer = () => {
   return (
     <div className="nep-cards">
       <div className="container">
+      <h2 className="nep-carousel-title">Features</h2>
         <div className="nep-cards-grid">
           {cardsData.map((card, index) => (
             <Card
