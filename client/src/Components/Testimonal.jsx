@@ -7,18 +7,14 @@ import {
   MDBIcon,
   MDBRow,
 } from "mdb-react-ui-kit";
+import './Testimonal.css'; // Make sure to import the CSS file
 
 export default function Testimonial() {
   return (
     <MDBContainer className="py-5">
       <MDBRow className="d-flex justify-content-center">
         <MDBCol md="10" xl="8" className="text-center">
-          <h3 className="mb-4">Testimonials</h3>
-          <p className="mb-4 pb-2 mb-md-5 pb-md-0">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-            error amet numquam iure provident voluptate esse quasi, veritatis
-            totam voluptas nostrum quisquam eum porro a pariatur veniam.
-          </p>
+        <h2 className="nep-carousel-title">Testimonials</h2>
         </MDBCol>
       </MDBRow>
       <div className="custom-testimonial-container">
