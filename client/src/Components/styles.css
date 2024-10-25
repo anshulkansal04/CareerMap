@@ -18,10 +18,14 @@ body {
   padding: 0;
 }
 
-.container {
-  max-width: 1200px;
+.container, .container-nav {
+  max-width: 1540px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 25px;
+}
+
+.container-nav {
+  max-width: 1330px; /* Adjust based on need */
 }
 
 /* Navbar Styles */
@@ -63,12 +67,13 @@ body {
 
 .nep-navbar-links {
   display: flex;
+  align-items: center; /* Added to vertically align links */
 }
 
 .nep-navbar-link {
   color: var(--text-color);
   text-decoration: none;
-  margin-left: 1.5rem;
+  margin-left: 5.5rem;
   font-weight: 500;
   transition: var(--transition);
   position: relative;
@@ -107,11 +112,28 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nep-navbar-links {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .nep-navbar-link {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .nep-navbar-cta {
+    margin-top: 1rem;
+  }
+}
+
+
 /* Hero Styles */
 .nep-hero {
   background: linear-gradient(135deg, #3498db, #8e44ad);
-  color: var(--white);
-  padding: 120px 0 80px;
+  padding: 100px 0 140px;
   margin-top: 60px;
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
@@ -179,7 +201,7 @@ body {
 
 /* Carousel Styles */
 .nep-carousel {
-  padding: 80px 0;
+  padding: 50px 0;
   background-color: var(--white);
 }
 
@@ -229,7 +251,7 @@ body {
 
 /* Card Styles */
 .nep-cards {
-  padding: 80px 0;
+  padding: 25px 0;
   background-color: var(--background-color);
 }
 
