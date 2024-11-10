@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 import "./LoginPage.css";
 
 export default function LoginPage() {
@@ -57,9 +58,12 @@ export default function LoginPage() {
           </button>
           <div className="sign-up-link">
             Not a member?{" "}
-            <a href="#" className="sign-up">
+            {/* <a href="#" className="sign-up">
               Sign up
-            </a>
+            </a> */}
+            <Link to="/signup" className="sign-up">
+              Sign up
+            </Link>
           </div>
 
           <div className="login-form">
@@ -120,9 +124,12 @@ export default function LoginPage() {
             <h2 className="nep-title">National Education Policy (NEP)</h2>
             <div className="nep-content">
               <p className="nep-description">
-                The National Education Policy (NEP) aims to reform and revamp the Indian education system. The policy emphasizes a
-                holistic approach, providing equitable access to quality education for all, promoting creativity, and fostering
-                research and innovation. This is a step towards making India a global knowledge superpower.
+                The National Education Policy (NEP) aims to reform and revamp
+                the Indian education system. The policy emphasizes a holistic
+                approach, providing equitable access to quality education for
+                all, promoting creativity, and fostering research and
+                innovation. This is a step towards making India a global
+                knowledge superpower.
               </p>
 
               <ul className="nep-features">
@@ -134,7 +141,10 @@ export default function LoginPage() {
               </ul>
 
               <div className="nep-footer">
-                <p className="nep-quote">"Education is the most powerful weapon which you can use to change the world." – Nelson Mandela</p>
+                <p className="nep-quote">
+                  "Education is the most powerful weapon which you can use to
+                  change the world." – Nelson Mandela
+                </p>
               </div>
             </div>
           </div>
