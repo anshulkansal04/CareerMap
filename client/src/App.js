@@ -11,6 +11,7 @@ import "./Components/styles.css";
 import PersonalInfoForm from "./pages/PersonalInfoForm";
 import EducationDetailsForm from "./pages/EducationDetailsForm";
 import ExtraDetailsForm from "./pages/ExtraDetailsForm";
+import CollegePred from './pages/CollegePred';
 
 function App() {
   return (
