@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -9,15 +10,31 @@ export default function Navbar() {
           <span className="nep-navbar-brand">Future Fit</span>
         </div>
         <nav className="nep-navbar-links">
-          <a href="#" className="nep-navbar-link">Home</a>
-          <a href="#" className="nep-navbar-link">Info of NEP</a>
-          <a href="#" className="nep-navbar-link">Features</a>
-          <a href="#" className="nep-navbar-link">Testimonials</a>
-          <a href="#" className="nep-navbar-link">About Us</a>
+          <a href="#" className="nep-navbar-link">
+            Home
+          </a>
+          <a href="#" className="nep-navbar-link">
+            Info of NEP
+          </a>
+          <a href="#" className="nep-navbar-link">
+            Features
+          </a>
+          <a href="#" className="nep-navbar-link">
+            Testimonials
+          </a>
+          <a href="#" className="nep-navbar-link">
+            About Us
+          </a>
         </nav>
-        <a href="#" className="nep-navbar-cta">
+        {/* <a href="#" className="nep-navbar-cta">
           Login/SignUp
-        </a>
+        </a> */}
+        <Link to="/login" className="nep-navbar-cta">
+          Login
+        </Link>
+        <Link to="/signup" className="nep-navbar-cta">
+          SignUp
+        </Link>
       </div>
     </header>
   );

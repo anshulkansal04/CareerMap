@@ -1,32 +1,43 @@
-// import './App.css';
-import Hero from './Components/Hero';
-// import SignUp from './pages/SignUp';
-// import LoginPage from './pages/LoginPage';
-import { Toaster } from 'react-hot-toast';
-import Carousel from './Components/Carousel';
-import Card from './Components/Card'
-import Testimonal from './Components/Testimonal';
-import Navbar from './Components/Navbar';
-import './Components/styles.css';
-import PersonalInfoForm from './pages/PersonalInfoForm';
-import EducationDetailsForm from './pages/EducationDetailsForm';
-import ExtraDetailsForm from './pages/ExtraDetailsForm';
+import Hero from "./Components/Hero";
+import SignUp from "./pages/SignUp";
+import LoginPage from "./pages/LoginPage";
+import { Toaster } from "react-hot-toast";
+import Carousel from "./Components/Carousel";
+import Card from "./Components/Card";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Testimonal from "./Components/Testimonal";
+import Navbar from "./Components/Navbar";
+import "./Components/styles.css";
+import PersonalInfoForm from "./pages/PersonalInfoForm";
+import EducationDetailsForm from "./pages/EducationDetailsForm";
+import ExtraDetailsForm from "./pages/ExtraDetailsForm";
 
 function App() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
-      {/* <Hero /> */}
-      {/* <Info /> */}
-      {/* <SignUp />
-      <LoginPage /> */}
-      {/* <Toaster /> */}
-      {/* <Carousel /> */}
-      {/* <Card /> */}
-      {/* <Testimonal /> */}
-      <PersonalInfoForm />
-      {/* <EducationDetailsForm /> */}
-      {/* <ExtraDetailsForm /> */}
+      <Router>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <Navbar />
+                <Hero />
+                <Carousel />
+                <Toaster />
+                <Card />
+                <Testimonal />
+              </>
+            }
+          ></Route>
+          <Route path="/personalInfo" element={<PersonalInfoForm />} />
+          <Route path="/educationalInfo" element={<EducationDetailsForm />} />
+          <Route path="/extraInfo" element={<ExtraDetailsForm />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

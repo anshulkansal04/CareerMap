@@ -6,7 +6,8 @@ import { FcGoogle } from "react-icons/fc";
 import "./SignUp.css";
 import edu from "../assets/education.png";
 import grad from "../assets/graduation.png";
-import emb from "../assets/emblem.png"
+import emb from "../assets/emblem.png";
+import { Link } from "react-router-dom";
 
 export default function Component() {
   const [formData, setFormData] = useState({
@@ -79,9 +80,12 @@ export default function Component() {
           </button>
           <div className="sign-in-link">
             Already a member?{" "}
-            <a href="#" className="sign-in">
+            {/* <a href="#" className="sign-in">
               Sign in
-            </a>
+            </a> */}
+            <Link to="/login" className="sign-in">
+              Sign in
+            </Link>
           </div>
 
           <div className="sign-up-form">
@@ -200,7 +204,7 @@ export default function Component() {
                 <rect x="20" y="20" width="120" height="25" fill="#FF9933" />
                 <rect x="20" y="45" width="120" height="25" fill="#FFFFFF" />
                 <rect x="20" y="70" width="120" height="25" fill="#138808" />
-                
+
                 {/* Ashoka Chakra (more detailed and faster animation) */}
                 <circle cx="80" cy="57.5" r="10" fill="#000080" />
                 <circle cx="80" cy="57.5" r="9" fill="#FFFFFF" />
@@ -219,9 +223,9 @@ export default function Component() {
                       transition={{ delay: i * 0.02, duration: 0.2 }}
                     />
                     <motion.path
-                      d={`M80,57.5 L${80 + 7 * Math.cos((i * 15 * Math.PI) / 180)},${
-                        57.5 + 7 * Math.sin((i * 15 * Math.PI) / 180)
-                      }`}
+                      d={`M80,57.5 L${
+                        80 + 7 * Math.cos((i * 15 * Math.PI) / 180)
+                      },${57.5 + 7 * Math.sin((i * 15 * Math.PI) / 180)}`}
                       fill="none"
                       stroke="#000080"
                       strokeWidth="0.5"
@@ -234,7 +238,7 @@ export default function Component() {
 
                 {/* Iconic Indian Educational Institution (inspired by IIT Delhi) */}
                 <rect x="200" y="150" width="400" height="200" fill="#d1d5db" />
-                
+
                 {/* Graduation image */}
                 <rect x="250" y="200" width="80" height="100" fill="#f3f4f6" />
                 <motion.image
@@ -247,7 +251,7 @@ export default function Component() {
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
                 />
-                
+
                 {/* National Emblem of India */}
                 <rect x="350" y="200" width="80" height="100" fill="#f3f4f6" />
                 <motion.image
@@ -260,7 +264,7 @@ export default function Component() {
                   animate={{ scale: 1 }}
                   transition={{ delay: 1, duration: 0.5, type: "spring" }}
                 />
-                
+
                 {/* Education image */}
                 <rect x="450" y="200" width="80" height="100" fill="#f3f4f6" />
                 <motion.image
@@ -273,7 +277,7 @@ export default function Component() {
                   animate={{ scale: 1 }}
                   transition={{ delay: 1.5, duration: 0.5, type: "spring" }}
                 />
-                
+
                 <path d="M200 150 L400 50 L600 150" fill="#ef4444" />
                 <rect x="380" y="300" width="40" height="50" fill="#a78bfa" />
 
