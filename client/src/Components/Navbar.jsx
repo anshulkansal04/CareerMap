@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {FaSignInAlt, FaSignOutAlt, FaUser} from "react-icons/fa"
 
 export default function Navbar() {
   return (
@@ -30,10 +31,10 @@ export default function Navbar() {
           Login/SignUp
         </a> */}
         <Link to="/login" className="nep-navbar-cta">
-          Login
+          <FaSignInAlt />Login
         </Link>
         <Link to="/signup" className="nep-navbar-cta">
-          SignUp
+          <FaUser />Register
         </Link>
       </div>
     </header>

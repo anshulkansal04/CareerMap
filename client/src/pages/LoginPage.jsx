@@ -4,6 +4,8 @@ import { ArrowLeft } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "../auth/authslice";
 import "./LoginPage.css";
 
 export default function LoginPage() {
@@ -13,10 +15,12 @@ export default function LoginPage() {
   });
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
+  const dispatch = useDispatch();
+  const { user, isLoading, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+  const { email, password } = formData;
   const validateForm = () => {
-    const { email, password } = formData;
-
     if (!emailRegex.test(email)) {
       toast.error("Invalid email format");
       return false;
@@ -43,10 +47,12 @@ export default function LoginPage() {
     if (!validateForm()) {
       return;
     }
-
     toast.success("Login Successful");
-    console.log("Printing the login form data:");
-    console.log(formData);
+    const userData = {
+      email,
+      password,
+    };
+    dispatch(login(userData));
   };
 
   return (

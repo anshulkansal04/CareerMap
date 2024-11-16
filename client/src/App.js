@@ -11,7 +11,7 @@ import "./Components/styles.css";
 import PersonalInfoForm from "./pages/PersonalInfoForm";
 import EducationDetailsForm from "./pages/EducationDetailsForm";
 import ExtraDetailsForm from "./pages/ExtraDetailsForm";
-import CollegePred from './pages/CollegePred';
+import CollegePred from "./pages/CollegePred";
 
 function App() {
   return (
@@ -26,7 +26,6 @@ function App() {
                 <Navbar />
                 <Hero />
                 <Carousel />
-                <Toaster />
                 <Card />
                 <Testimonal />
               </>
@@ -39,6 +38,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
         </Routes>
       </Router>
+      <Toaster />
     </div>
   );
 }
