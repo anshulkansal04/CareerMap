@@ -13,7 +13,7 @@ import EducationDetailsForm from "./pages/EducationDetailsForm";
 import ExtraDetailsForm from "./pages/ExtraDetailsForm";
 import CollegePred from "./pages/CollegePred";
 import Mmind from "./pages/MindMap";
-
+import Scholarpage from "./pages/ScholarShip";
 function App() {
   return (
     <div className="App">
@@ -39,6 +39,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/collegeprediction" element={<CollegePred />} />
           <Route path="/careermap" element={<Mmind />} />
+          <Route path="/scholarship" element={<Scholarpage />} />
         </Routes>
       </Router>
       <Toaster />
