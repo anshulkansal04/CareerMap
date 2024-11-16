@@ -12,6 +12,7 @@ import PersonalInfoForm from "./pages/PersonalInfoForm";
 import EducationDetailsForm from "./pages/EducationDetailsForm";
 import ExtraDetailsForm from "./pages/ExtraDetailsForm";
 import CollegePred from "./pages/CollegePred";
+import Mmind from "./pages/MindMap";
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
           <Route path="/extraInfo" element={<ExtraDetailsForm />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/collegeprediction" element={<CollegePred />} />
+          <Route path="/careermap" element={<Mmind />} />
         </Routes>
       </Router>
       <Toaster />
