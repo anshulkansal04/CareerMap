@@ -1,160 +1,435 @@
-.college-pred-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary-color: #06b6d4;
+  --secondary-hover: #0891b2;
+  --accent-color: #f59e0b;
+  --danger-color: #ef4444;
+  --danger-hover: #dc2626;
+  --background-light: #f0f9ff;
+  --background-dark: #0f172a;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
-.college-pred-heading {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
+.college-bg {
+  background-color: var(--background-light);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%234f46e5' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-.college-pred-form {
-    max-width: 500px;
-    margin: 0 auto 40px;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
+.college-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.college-page-title {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2.5rem;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.form-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+.college-form {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.rank-input,
-.course-select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
+.college-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-.college-pred-submit-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
+.college-form-group {
+  margin-bottom: 1.5rem;
 }
 
-.college-pred-submit-btn:hover {
-    background-color: #45a049;
+.college-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.938rem;
+  color: #0f172a;
+}
+
+.college-form-input,
+.college-form-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.college-form-input:focus,
+.college-form-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.college-form-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.college-submit-btn {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.college-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.college-submit-btn:active {
+  animation: collegeFormSubmit 0.5s ease;
 }
 
 .college-table-container {
-    overflow-x: auto;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  margin-top: 2rem;
 }
 
-.college-pred-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+.college-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem;
+  margin: 0;
 }
 
-.college-pred-table-header {
-    background-color: #f2f2f2;
+.college-table-header {
+  background-color: var(--primary-color);
 }
 
-.college-pred-table-row {
-    transition: background-color 0.3s ease;
+.college-header-cell {
+  padding: 1rem;
+  font-weight: 600;
+  color: white;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.college-pred-table-cell {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+.college-row {
+  transition: all 0.3s ease;
 }
 
-.college-pred-table-row:nth-child(even) {
-    background-color: #f9f9f9;
+.college-row:nth-child(even) {
+  background-color: #f8fafc;
 }
 
-.college-pred-table-row:hover {
-    background-color: #f1f1f1;
+.college-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
-.graph-btn,
-.info-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    margin: 0 5px;
-    padding: 5px;
+.college-table-cell {
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
-.graph-btn:hover,
-.info-btn:hover {
-    opacity: 0.7;
+.college-table-cell:first-child {
+  border-left: 1px solid var(--border-color);
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 }
 
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.college-table-cell:last-child {
+  border-right: 1px solid var(--border-color);
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
-.college-pred-modal {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 800px;
-    width: 90%;
+.college-rank-cell {
+  font-weight: 600;
+  color: var(--primary-color);
+  width: 80px;
 }
 
-.college-pred-graph-container {
-    margin: 20px 0;
-    overflow-x: auto;
+.college-name-cell {
+  color: var(--text-primary);
+  font-weight: 500;
 }
 
-.college-pred-close-btn {
-    background-color: #f44336;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
+.college-cutoff-cell {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--secondary-color);
+  font-weight: 600;
 }
 
-.college-pred-close-btn:hover {
-    background-color: #d32f2f;
+.college-action-cell {
+  width: 120px;
+  text-align: center;
 }
 
-/* Responsive styles */
+.college-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  margin: 0 0.25rem;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+}
+
+.college-graph-btn {
+  color: var(--secondary-color);
+}
+
+.college-graph-btn:hover {
+  background-color: #e0f2fe;
+  color: var(--secondary-hover);
+  transform: scale(1.1);
+}
+
+.college-info-btn {
+  color: var(--accent-color);
+}
+
+.college-info-btn:hover {
+  background-color: #fef3c7;
+  color: #d97706;
+  transform: scale(1.1);
+}
+
+.college-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: collegeFadeIn 0.3s ease;
+}
+
+.college-modal {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 800px;
+  width: 90%;
+  border: none;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: collegeSlideUp 0.3s ease;
+}
+
+.college-modal-title {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.college-graph-container {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.college-trend-chart {
+  margin: 0 auto;
+}
+
+.college-close-btn {
+  background-color: var(--danger-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  float: right;
+  transition: all 0.3s ease;
+}
+
+.college-close-btn:hover {
+  background-color: var(--danger-hover);
+  transform: scale(1.05);
+}
+
+@keyframes collegeFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes collegeSlideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes collegeFormSubmit {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
-    .college-pred-container {
-        padding: 10px;
-    }
+  .college-container {
+    padding: 1rem;
+  }
 
-    .college-pred-form {
-        padding: 15px;
-    }
+  .college-page-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
 
-    .college-pred-table {
-        font-size: 14px;
-    }
+  .college-form {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
 
-    .college-pred-modal {
-        width: 95%;
-        padding: 15px;
-    }
+  .college-table {
+    font-size: 0.875rem;
+  }
+
+  .college-table-cell,
+  .college-header-cell {
+    padding: 0.75rem;
+  }
+
+  .college-action-btn {
+    font-size: 1rem;
+    padding: 0.375rem;
+  }
+
+  .college-modal {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .college-modal-title {
+    font-size: 1.25rem;
+  }
+
+  .college-graph-container {
+    padding: 0.75rem;
+    margin: 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .college-page-title {
+    font-size: 1.75rem;
+  }
+
+  .college-form {
+    padding: 1rem;
+  }
+
+  .college-table-container {
+    margin-top: 1.5rem;
+    border-radius: 0.75rem;
+  }
+
+  .college-action-cell {
+    width: 80px;
+  }
+
+  .college-rank-cell {
+    width: 60px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #818cf8;
+    --secondary-color: #22d3ee;
+    --accent-color: #fbbf24;
+    --background-light: #0f172a;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --border-color: #1e293b;
+  }
+
+  body {
+    background-color: var(--background-light);
+    color: var(--text-primary);
+  }
+
+  .college-form,
+  .college-table-container,
+  .college-modal {
+    background-color: #1e293b;
+  }
+
+  .college-form-input,
+  .college-form-select {
+    background-color: #2d3748;
+    color: var(--text-primary);
+  }
+
+  .college-row:nth-child(even) {
+    background-color: #2d3748;
+  }
+
+  .college-row:hover {
+    background-color: #4a5568;
+  }
+
+  .college-graph-container {
+    background-color: #2d3748;
+  }
 }
