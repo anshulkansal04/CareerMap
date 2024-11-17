@@ -1,24 +1,25 @@
 :root {
-  --primary-color: #4f46e5;
-  --primary-hover: #4338ca;
-  --secondary-color: #06b6d4;
-  --secondary-hover: #0891b2;
-  --accent-color: #f59e0b;
-  --danger-color: #ef4444;
+  --primcolor: #4f46e5;
+  --primaryhover: #4338ca;
+  --secondcolor: #06b6d4;
+  --secondaryhover: #0891b2;
+  --accentcolor: #f59e0b;
+  --dangercolor: #ef4444;
   --danger-hover: #dc2626;
-  --background-light: #f0f9ff;
+  --backgroundlight: #f0f9ff;
   --background-dark: #0f172a;
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --border-color: #e2e8f0;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --textprimary: #1e293b;
+  --textsecondary: #64748b;
+  --bordercolor: #e2e8f0;
+  --shadowsm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadowmd: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadowlg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .college-bg {
-  background-color: var(--background-light);
-  color: var(--text-primary);
+  background-color: var(--backgroundlight);
+  margin-top: 20px;
+  color: var(--textprimary);
   font-family: 'Inter', sans-serif;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%234f46e5' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
@@ -32,7 +33,7 @@
 
 .college-page-title {
   text-align: center;
-  color: var(--primary-color);
+  color: var(--primcolor);
   margin-bottom: 2.5rem;
   font-size: 3rem;
   font-weight: 800;
@@ -46,7 +47,7 @@
   padding: 2rem;
   background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
   border-radius: 1rem;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadowlg);
   border: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -64,7 +65,7 @@
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--textprimary);
   font-size: 0.938rem;
   color: #0f172a;
 }
@@ -73,7 +74,7 @@
 .college-form-select {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--bordercolor);
   border-radius: 0.5rem;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -83,16 +84,16 @@
 .college-form-input:focus,
 .college-form-select:focus {
   outline: none;
-  border-color: var(--primary-color);
+  border-color: var(--primcolor);
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
 }
 
 .college-form-input::placeholder {
-  color: var(--text-secondary);
+  color: var(--textsecondary);
 }
 
 .college-submit-btn {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(135deg, var(--primcolor) 0%, var(--secondcolor) 100%);
   color: white;
   padding: 0.875rem 1.5rem;
   border: none;
@@ -116,8 +117,8 @@
 .college-table-container {
   background-color: white;
   border-radius: 1rem;
-  box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-color);
+  box-shadow: var(--shadowlg);
+  border: 1px solid var(--bordercolor);
   overflow: hidden;
   margin-top: 2rem;
 }
@@ -130,7 +131,7 @@
 }
 
 .college-table-header {
-  background-color: var(--primary-color);
+  background-color: var(--primcolor);
 }
 
 .college-header-cell {
@@ -158,36 +159,36 @@
 
 .college-table-cell {
   padding: 1rem;
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  border-top: 1px solid var(--bordercolor);
+  border-bottom: 1px solid var(--bordercolor);
 }
 
 .college-table-cell:first-child {
-  border-left: 1px solid var(--border-color);
+  border-left: 1px solid var(--bordercolor);
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
 }
 
 .college-table-cell:last-child {
-  border-right: 1px solid var(--border-color);
+  border-right: 1px solid var(--bordercolor);
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
 
 .college-rank-cell {
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--primcolor);
   width: 80px;
 }
 
 .college-name-cell {
-  color: var(--text-primary);
+  color: var(--textprimary);
   font-weight: 500;
 }
 
 .college-cutoff-cell {
   font-family: 'Roboto Mono', monospace;
-  color: var(--secondary-color);
+  color: var(--secondcolor);
   font-weight: 600;
 }
 
@@ -208,17 +209,17 @@
 }
 
 .college-graph-btn {
-  color: var(--secondary-color);
+  color: var(--secondcolor);
 }
 
 .college-graph-btn:hover {
   background-color: #e0f2fe;
-  color: var(--secondary-hover);
+  color: var(--secondaryhover);
   transform: scale(1.1);
 }
 
 .college-info-btn {
-  color: var(--accent-color);
+  color: var(--accentcolor);
 }
 
 .college-info-btn:hover {
@@ -254,7 +255,7 @@
 }
 
 .college-modal-title {
-  color: var(--primary-color);
+  color: var(--primcolor);
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
   font-weight: 600;
@@ -265,7 +266,7 @@
   padding: 1rem;
   background-color: white;
   border-radius: 0.5rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--bordercolor);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -274,7 +275,7 @@
 }
 
 .college-close-btn {
-  background-color: var(--danger-color);
+  background-color: var(--dangercolor);
   color: white;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -395,18 +396,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: #818cf8;
-    --secondary-color: #22d3ee;
-    --accent-color: #fbbf24;
-    --background-light: #0f172a;
-    --text-primary: #e2e8f0;
-    --text-secondary: #94a3b8;
-    --border-color: #1e293b;
+    --primcolor: #818cf8;
+    --secondcolor: #22d3ee;
+    --accentcolor: #fbbf24;
+    --backgroundlight: #0f172a;
+    --textprimary: #e2e8f0;
+    --textsecondary: #94a3b8;
+    --bordercolor: #1e293b;
   }
 
   body {
-    background-color: var(--background-light);
-    color: var(--text-primary);
+    background-color: var(--backgroundlight);
+    color: var(--textprimary);
   }
 
   .college-form,
@@ -418,7 +419,7 @@
   .college-form-input,
   .college-form-select {
     background-color: #2d3748;
-    color: var(--text-primary);
+    color: var(--textprimary);
   }
 
   .college-row:nth-child(even) {

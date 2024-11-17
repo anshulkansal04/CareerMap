@@ -1,4 +1,3 @@
-# backend/app.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pandas as pd
@@ -7,10 +6,10 @@ app = Flask(__name__)
 CORS(app)
 
 def process_data():
-    file_path = 'college_cutoff.xlsx'
-    df = pd.read_excel(file_path)
+    file_path = 'college.csv'
+    df = pd.read_csv(file_path)
 
-    required_columns = ['College Name', 'Courses', 'Cut off(2022)', 'Cut off(2023)', 'Cut off(2024)']
+    required_columns = ['College Name', 'Courses', '2022', '2023', '2024','2025']
     if not all(col in df.columns for col in required_columns):
         raise ValueError("The Excel file does not have the required columns.")
     
@@ -19,9 +18,10 @@ def process_data():
         data.append({
             'college_name': row['College Name'],
             'course': row['Courses'],
-            'cutoff_2022': row['Cut off(2022)'] if not pd.isna(row['Cut off(2022)']) else None,
-            'cutoff_2023': row['Cut off(2023)'] if not pd.isna(row['Cut off(2023)']) else None,
-            'cutoff_2024': row['Cut off(2024)'] if not pd.isna(row['Cut off(2024)']) else None
+            'cutoff_2022': row['2022'] if not pd.isna(row['2022']) else None,
+            'cutoff_2023': row['2023'] if not pd.isna(row['2023']) else None,
+            'cutoff_2024': row['2024'] if not pd.isna(row['2024']) else None,
+            'cutoff_2025': row['2025'] if not pd.isna(row['2025']) else None,
         })
 
     return data
@@ -38,14 +38,15 @@ def get_colleges():
         filtered_colleges = []
         for college in colleges_data:
             if college['course'] == selected_course and \
-               college['cutoff_2024'] is not None and \
-               college['cutoff_2024'] >= user_rank:
+               college['cutoff_2025'] is not None and \
+               college['cutoff_2025'] >= user_rank:
                 filtered_colleges.append({
                     'name': college['college_name'],
                     'cutoffs': {
                         '2022': college['cutoff_2022'],
                         '2023': college['cutoff_2023'],
-                        '2024': college['cutoff_2024']
+                        '2024': college['cutoff_2024'],
+                        '2025': college['cutoff_2025'],
                     }
                 })
 
