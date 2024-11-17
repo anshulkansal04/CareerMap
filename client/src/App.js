@@ -11,9 +11,10 @@ import "./Components/styles.css";
 import PersonalInfoForm from "./pages/PersonalInfoForm";
 import EducationDetailsForm from "./pages/EducationDetailsForm";
 import ExtraDetailsForm from "./pages/ExtraDetailsForm";
-import CollegePred from "./pages/CollegePred";
+// import CollegePred from "./pages/CollegePred";
 import Mmind from "./pages/MindMap";
 import Scholarpage from "./pages/ScholarShip";
+import Footer from "./Components/Footer";
 function App() {
   return (
     <div className="App">
@@ -29,6 +30,7 @@ function App() {
                 <Carousel />
                 <Card />
                 <Testimonal />
+                <Footer />
               </>
             }
           ></Route>
@@ -37,7 +39,7 @@ function App() {
           <Route path="/extraInfo" element={<ExtraDetailsForm />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/collegeprediction" element={<CollegePred />} />
+          {/* <Route path="/collegeprediction" element={<CollegePred />} /> */}
           <Route path="/careermap" element={<Mmind />} />
           <Route path="/scholarship" element={<Scholarpage />} />
         </Routes>
