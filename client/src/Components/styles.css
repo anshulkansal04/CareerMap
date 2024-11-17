@@ -8,6 +8,7 @@
   --white: #ffffff;
   --nav-hover: #e67e22;
   --transition: all 0.3s ease-in-out;
+  --complementary-color: #b74b6c;
 }
 
 body {
@@ -135,73 +136,197 @@ body {
   }
 }
 
-/* Hero Styles */
-.nep-hero {
-  background: linear-gradient(135deg, #3498db, #8e44ad);
-  padding: 100px 0 140px;
-  margin-top: 60px;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+/*Hero Section Styles */
+
+.edu-hero {
+  min-height: 100vh;
+  margin-top: 40px;
+  background: var(--background-color);
+  position: relative;
+  overflow: hidden;
 }
 
-.nep-hero-content {
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--background-color) 0%, var(--white) 100%);
+  z-index: 1;
+}
+
+.animated-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(75, 108, 183, 0.1) 0%, transparent 50%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 4rem;
 }
 
-.nep-hero-text {
+.edu-hero-text {
   flex: 1;
   padding-right: 2rem;
 }
 
-.nep-hero-title {
+.edu-hero-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.nep-hero-description {
+.edu-hero-title-welcome {
+  color: #2c3e50;
+  display: block;
+}
+
+.edu-hero-title-future {
+  color: #e74c3c;
+  display: block;
+}
+
+.edu-hero-fact {
   font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #34495e;
+}
+
+.edu-hero-description {
+  font-size: 1.1rem;
   margin-bottom: 2rem;
-  opacity: 0.9;
+  line-height: 1.6;
+  color: #2c3e50;
 }
 
-.nep-hero-cta {
-  display: inline-block;
-  background-color: var(--accent-color);
-  color: var(--white);
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: var(--transition);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.nep-hero-cta:hover {
-  background-color: #27ae60;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.nep-hero-image {
+.hero-illustrations {
   flex: 1;
-  text-align: center;
+  position: relative;
+  height: 400px;
 }
 
-.nep-hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.floating-elements {
+  position: relative;
+  height: 100%;
+}
+
+.floating-element {
+  position: absolute;
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-element:nth-child(1) { top: 0; left: 20%; }
+.floating-element:nth-child(2) { top: 20%; right: 10%; }
+.floating-element:nth-child(3) { top: 40%; left: 30%; }
+.floating-element:nth-child(4) { top: 60%; right: 30%; }
+.floating-element:nth-child(5) { top: 80%; left: 50%; }
+
+.icon-card {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
 }
 
-.nep-hero-image img:hover {
+.icon-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(75, 108, 183, 0.2);
+}
+
+.icon-card .icon {
+  color: var(--primary-color);
+}
+
+.icon-card span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.path-line {
+  fill: none;
+  stroke: var(--primary-color);
+  stroke-width: 2;
+  stroke-opacity: 0.2;
+  stroke-dasharray: 10;
+  animation: dash 20s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.1; }
+  50% { transform: scale(1.2); opacity: 0.2; }
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: 1000; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .title-welcome {
+    font-size: 2rem;
+  }
+
+  .title-future {
+    font-size: 3rem;
+  }
+
+  .cta-container {
+    justify-content: center;
+  }
+
+  .hero-illustrations {
+    height: 300px;
+  }
+
+  .floating-element {
+    transform: scale(0.8);
+  }
 }
 
 /* Carousel Styles */

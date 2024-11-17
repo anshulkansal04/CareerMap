@@ -9,6 +9,9 @@ export default function CollegePredictor() {
   const [colleges, setColleges] = useState([]);
   const [selectedCollege, setSelectedCollege] = useState(null);
   const [showGraph, setShowGraph] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const courses = [
     'Computer Science Engineering',
@@ -27,6 +30,10 @@ export default function CollegePredictor() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
+    setColleges([]);
+
     try {
       const response = await fetch('http://localhost:5000/api/colleges', {
         method: 'POST',
@@ -38,10 +45,27 @@ export default function CollegePredictor() {
           course: selectedCourse
         })
       });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch college data');
+      }
+
       const data = await response.json();
-      setColleges(data);
+      
+      if (data.error) {
+        throw new Error(data.error);
+      }
+
+      if (data.length === 0) {
+        setError('No colleges found matching your criteria');
+      } else {
+        setColleges(data);
+      }
     } catch (error) {
+      setError(error.message);
       console.error('Error fetching data:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -50,11 +74,24 @@ export default function CollegePredictor() {
     setShowGraph(true);
   };
 
+  const handleDetailsClick = (college) => {
+    setSelectedCollege(college);
+    setShowDetails(true);
+  };
+
   const prepareGraphData = (cutoffs) => {
-    return Object.entries(cutoffs).map(([year, value]) => ({
-      year,
-      cutoff: value
-    }));
+    return Object.entries(cutoffs)
+      .filter(([_, value]) => value !== null)
+      .map(([year, value]) => ({
+        year,
+        cutoff: value
+      }));
+  };
+
+  const formatFacility = (facility) => {
+    return facility.split('_').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
   };
 
   return (
@@ -74,6 +111,7 @@ export default function CollegePredictor() {
                 required
                 className="college-form-input"
                 placeholder="Enter your rank"
+                disabled={loading}
               />
             </div>
 
@@ -84,6 +122,7 @@ export default function CollegePredictor() {
                 onChange={(e) => setSelectedCourse(e.target.value)}
                 required
                 className="college-form-select"
+                disabled={loading}
               >
                 <option value="">Select a course</option>
                 {courses.map((course) => (
@@ -92,10 +131,27 @@ export default function CollegePredictor() {
               </select>
             </div>
 
-            <button type="submit" className="college-submit-btn">
-              Search Colleges
+            <button 
+              type="submit" 
+              className="college-submit-btn"
+              disabled={loading}
+            >
+              {loading ? 'Searching...' : 'Search Colleges'}
             </button>
           </form>
+
+          {error && (
+            <div className="college-error-message">
+              {error}
+            </div>
+          )}
+
+          {loading && (
+            <div className="college-loading">
+              <div className="college-spinner"></div>
+              <p>Searching for colleges...</p>
+            </div>
+          )}
 
           {colleges.length > 0 && (
             <div className="college-table-container">
@@ -123,6 +179,7 @@ export default function CollegePredictor() {
                           📊
                         </button>
                         <button
+                          onClick={() => handleDetailsClick(college)}
                           className="college-action-btn college-info-btn"
                           title="College Info"
                         >
@@ -162,6 +219,60 @@ export default function CollegePredictor() {
                 </div>
                 <button
                   onClick={() => setShowGraph(false)}
+                  className="college-close-btn"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          )}
+
+          {showDetails && selectedCollege && (
+            <div className="college-modal-overlay">
+              <div className="college-modal college-details-modal">
+                <h2 className="college-modal-title">{selectedCollege.name}</h2>
+                <div className="college-details-content">
+                  <div className="college-detail-row">
+                    <span className="detail-label">Campus Size:</span>
+                    <span className="detail-value">{selectedCollege.details.campus_size}</span>
+                  </div>
+                  <div className="college-detail-row">
+                    <span className="detail-label">Total Students:</span>
+                    <span className="detail-value">{selectedCollege.details.total_students}</span>
+                  </div>
+                  <div className="college-detail-row">
+                    <span className="detail-label">Total Faculty:</span>
+                    <span className="detail-value">{selectedCollege.details.total_faculty}</span>
+                  </div>
+                  <div className="college-detail-row">
+                    <span className="detail-label">Established Year:</span>
+                    <span className="detail-value">{selectedCollege.details.established_year}</span>
+                  </div>
+                  <div className="college-detail-row">
+                    <span className="detail-label">College Type:</span>
+                    <span className="detail-value">{selectedCollege.details.college_type}</span>
+                  </div>
+                  <div className="college-detail-row">
+                    <span className="detail-label">Average Fees:</span>
+                    <span className="detail-value">
+                      ₹{typeof selectedCollege.details.average_fees === 'number' 
+                          ? selectedCollege.details.average_fees.toLocaleString() 
+                          : selectedCollege.details.average_fees}
+                    </span>
+                  </div>
+                  <div className="college-facilities">
+                    <h3>Facilities</h3>
+                    <div className="facilities-grid">
+                      {selectedCollege.details.facilities.map((facility, index) => (
+                        <div key={index} className="facility-item">
+                          {formatFacility(facility)}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setShowDetails(false)}
                   className="college-close-btn"
                 >
                   Close
