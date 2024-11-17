@@ -12,7 +12,7 @@ export default function Navbar() {
   const handleLogout = () => {
     dispatch(logout());
     dispatch(reset());
-    // navigate("/login");
+    navigate("/login");
   };
 
   return (
@@ -28,17 +28,17 @@ export default function Navbar() {
             </a>
           ))}
         </nav>
-        <div>
+        <div className="nep-navbar-actions">
           {user ? (
-            <button onClick={handleLogout} className="nep-navbar-cta">
+            <button onClick={handleLogout} className="nep-navbar-cta logout">
               <FaSignOutAlt /> Logout
             </button>
           ) : (
             <>
-              <Link to="/login" className="nep-navbar-cta">
+              <Link to="/login" className="nep-navbar-cta login">
                 <FaSignInAlt /> Login
               </Link>
-              <Link to="/signup" className="nep-navbar-cta">
+              <Link to="/signup" className="nep-navbar-cta register">
                 <FaUser /> Register
               </Link>
             </>

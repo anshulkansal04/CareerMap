@@ -1,134 +1,139 @@
 /* Global Styles */
 :root {
-  --primary-color: #3498db;
-  --secondary-color: #e74c3c;
-  --accent-color: #2ecc71;
+  --primary-color: #4b6cb7;
+  --secondary-color: #182848;
+  --highlight-color: #f39c12;
   --text-color: #2c3e50;
-  --background-color: #ecf0f1;
+  --background-color: #f5f6fa;
   --white: #ffffff;
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --nav-hover: #e67e22;
+  --transition: all 0.3s ease-in-out;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-color);
-  background-color: var(--background-color);
-  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-}
-
-.container, .container-nav {
-  max-width: 1540px;
-  margin: 0 auto;
-  padding: 0 25px;
-}
-
-.container-nav {
-  max-width: 1330px; /* Adjust based on need */
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 /* Navbar Styles */
 .nep-navbar {
-  background-color: var(--white);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .nep-navbar-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
 }
 
 .nep-navbar-logo {
-  display: flex;
-  align-items: center;
-}
-
-.nep-navbar-logo img {
-  width: 40px;
-  height: 40px;
-  margin-right: 0.5rem;
-}
-
-.nep-navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--white);
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .nep-navbar-links {
   display: flex;
-  align-items: center; /* Added to vertically align links */
+  gap: 2rem;
 }
 
 .nep-navbar-link {
-  color: var(--text-color);
+  color: var(--white);
   text-decoration: none;
-  margin-left: 5.5rem;
+  font-size: 1rem;
   font-weight: 500;
-  transition: var(--transition);
+  text-transform: capitalize;
   position: relative;
 }
 
 .nep-navbar-link::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
-  height: 2px;
+  height: 3px;
   bottom: -5px;
-  left: 0;
-  background-color: var(--primary-color);
-  transition: var(--transition);
+  left: 50%;
+  background: var(--highlight-color);
+  transition: width 0.3s ease, left 0.3s ease;
 }
 
 .nep-navbar-link:hover::after {
   width: 100%;
+  left: 0;
+}
+
+.nep-navbar-actions {
+  display: flex;
+  gap: 1rem;
 }
 
 .nep-navbar-cta {
-  background-color: var(--secondary-color);
-  color: var(--white);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
   border-radius: 25px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: var(--transition);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nep-navbar-cta.login {
+  background-color: var(--highlight-color);
+  color: var(--white);
+}
+
+.nep-navbar-cta.register {
+  background-color: var(--white);
+  color: var(--highlight-color);
+  border: 2px solid var(--highlight-color);
+}
+
+.nep-navbar-cta.logout {
+  background-color: #e74c3c;
+  color: var(--white);
 }
 
 .nep-navbar-cta:hover {
-  background-color: #c0392b;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
 }
 
-/* Responsive adjustments */
+.nep-navbar-cta.logout:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+  .nep-navbar-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
   .nep-navbar-links {
     flex-direction: column;
-    margin-left: 0;
+    align-items: center;
   }
 
   .nep-navbar-link {
-    margin-left: 0;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
   }
 
-  .nep-navbar-cta {
-    margin-top: 1rem;
+  .nep-navbar-actions {
+    flex-direction: column;
   }
 }
-
 
 /* Hero Styles */
 .nep-hero {
