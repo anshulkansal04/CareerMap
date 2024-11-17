@@ -1,18 +1,18 @@
 /* Error text */
-.error-text {
+.signup-error-text {
     color: red;
     font-size: 12px;
     margin-top: 5px;
 }
 
-.app-container {
+.signup-app-container {
     display: flex;
     height: 100vh;
     background-color: #EEF2FF;
     font-family: 'Arial', sans-serif;
 }
 
-.left-panel {
+.signup-left-panel {
     width: 50%;
     background-color: white;
     padding: 40px;
@@ -21,11 +21,11 @@
     transition: all 0.3s ease;
 }
 
-.left-panel:hover {
+.signup-left-panel:hover {
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
-.back-button {
+.signup-back-button {
     position: absolute;
     top: 24px;
     left: 24px;
@@ -36,34 +36,34 @@
     transition: transform 0.3s ease;
 }
 
-.back-button:hover {
+.signup-back-button:hover {
     transform: translateX(-5px);
 }
 
-.sign-in-link {
+.signup-sign-in-link {
     position: absolute;
-    top: 24px;
-    right: 24px;
-    font-size: 14px;
+    top: 28px;
+    right: 28px;
+    font-size: 18px;
     color: #666;
 }
 
-.sign-in {
+.signup-sign-in {
     color: #4361EE;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.sign-in:hover {
+.signup-sign-in:hover {
     color: #2541B2;
     text-decoration: underline;
 }
 
-.sign-up-form {
+.signup-sign-up-form {
     margin-top: 50px;
 }
 
-.title {
+.signup-title {
     font-size: 36px;
     font-weight: bold;
     margin-top: 30px;
@@ -72,7 +72,7 @@
     color: #333;
 }
 
-.subtitle {
+.signup-subtitle {
     color: #090000;
     margin-top: 10px;
 
@@ -80,13 +80,13 @@
     font-weight: 500;
 }
 
-.input-group {
+.signup-input-group {
     position: relative;
     margin-bottom: 20px;
     width: 60%;
 }
 
-.input-field {
+.signup-input-field {
     width: 100%;
     padding: 12px;
     border: 2px solid #ddd;
@@ -94,13 +94,13 @@
     transition: all 0.3s ease;
 }
 
-.input-field:focus {
+.signup-input-field:focus {
     border-color: #4361EE;
     box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
     outline: none;
 }
 
-.submit-button {
+.signup-submit-button {
 
     width: 30%;
     padding: 12px;
@@ -115,7 +115,7 @@
 
 }
 
-.submit-button:hover {
+.signup-submit-button:hover {
     background-color: #2541B2;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -123,13 +123,13 @@
 
 
 
-.social-icons {
+.signup-social-icons {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
 
-.social-button {
+.signup-social-button {
     width: 40px;
     height: 40px;
     border: 2px solid #4361EE;
@@ -141,13 +141,13 @@
     transition: all 0.3s ease;
 }
 
-.social-button:hover {
+.signup-social-button:hover {
     background-color: #4361EE;
     color: white;
     transform: scale(1.1);
 }
 
-.google {
+.signup-google {
     display: flex;
     align-items: center;
     width: 60%;
@@ -162,30 +162,29 @@
     margin-top: 1.5rem;
 }
 
-.google p {
+.signup-google p {
     margin: 0;
 }
 
 
 @media (max-width: 768px) {
-    .app-container {
+    .signup-app-container {
         flex-direction: column;
     }
 
-    .left-panel {
+    .signup-left-panel {
         width: 100%;
     }
 
-    .input-group,
-    .submit-button {
+    .signup-input-group,
+    .signup-submit-button {
         width: 100%;
     }
 }
 
-
 /* Right Panel Styles */
 /* Container for the entire panel */
-.right-panel {
+.signup-right-panel {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,7 +193,7 @@
 }
 
 /* Container for the SVG and content */
-.container {
+.signup-container {
     max-width: 900px;
     width: 100%;
     padding: 20px;
@@ -204,7 +203,7 @@
 }
 
 /* Title styling */
-.title {
+.signup-title {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
@@ -213,7 +212,7 @@
 }
 
 /* SVG container for the image */
-.svg-container {
+.signup-svg-container {
     position: relative;
     padding-top: 56.25%;
     /* 16:9 Aspect Ratio */
@@ -224,7 +223,7 @@
 }
 
 /* SVG styling */
-.svg-content {
+.signup-svg-content {
     position: absolute;
     top: 0;
     left: 0;
@@ -233,7 +232,7 @@
 }
 
 /* Description text */
-.description {
+.signup-description {
     margin-top: 20px;
     text-align: center;
     color: #666;
