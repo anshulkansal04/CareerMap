@@ -22,8 +22,18 @@ export default function Navbar() {
           <span className="nep-navbar-brand">Future Fit</span>
         </div>
         <nav className="nep-navbar-links">
-          {["Home", "Info of NEP", "Features", "Testimonials", "About Us"].map((item) => (
-            <a href={`#${item.toLowerCase().replace(/\s+/g, "-")}`} key={item} className="nep-navbar-link">
+          {[
+            "Home",
+            " Policy Insights ",
+            "Our Offerings ",
+            "Testimonials",
+            "Who We Are",
+          ].map((item) => (
+            <a
+              href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+              key={item}
+              className="nep-navbar-link"
+            >
               {item}
             </a>
           ))}

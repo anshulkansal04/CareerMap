@@ -11,10 +11,10 @@ import './Testimonal.css'; // Make sure to import the CSS file
 
 export default function Testimonial() {
   return (
-    <MDBContainer className="py-5">
+    <MDBContainer className="py-5" id="testimonials">
       <MDBRow className="d-flex justify-content-center">
         <MDBCol md="10" xl="8" className="text-center">
-        <h2 className="nep-carousel-title">Testimonials</h2>
+        <h2 className="nep-carousel-title">Success Stories</h2>
         </MDBCol>
       </MDBRow>
       <div className="custom-testimonial-container">
@@ -25,18 +25,17 @@ export default function Testimonial() {
           ></div>
           <div className="custom-avatar mx-auto bg-white">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+              src="https://t4.ftcdn.net/jpg/06/52/30/35/360_F_652303514_fy3u0VIB5xrA6Py6i3vpRW5VWZz8NBP9.jpg"
               className="rounded-circle img-fluid"
-              alt="Maria Smantha"
+              alt="Vidhi Malhotra"
             />
           </div>
           <MDBCardBody className="custom-card-body">
-            <h4 className="mb-4">Maria Smantha</h4>
+            <h4 className="mb-4">Vidhi Malhotra</h4>
             <hr />
             <p className="dark-grey-text mt-4">
               <MDBIcon fas icon="quote-left" className="pe-2 custom-quote-icon" />
-              Lorem ipsum dolor sit amet eos adipisci, consectetur adipisicing
-              elit.
+              I was overwhelmed by the choices for my future until I used Future Fit. Its clear roadmap and interactive career guidance tools helped me explore options I didn’t even know existed. Now, I’m pursuing my dream with a solid plan!
             </p>
           </MDBCardBody>
         </MDBCard>
@@ -48,18 +47,17 @@ export default function Testimonial() {
           ></div>
           <div className="custom-avatar mx-auto bg-white">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+              src="https://media.istockphoto.com/id/1360403989/photo/young-student-with-plane-and-book-study-abroad-concept.jpg?s=612x612&w=0&k=20&c=yh4qqhHBIkaA_QP2spr8ITT5xGeJ8Ldb9OwCIafm-iA="
               className="rounded-circle img-fluid"
-              alt="Lisa Cudrow"
+              alt="Kunal Joshi"
             />
           </div>
           <MDBCardBody className="custom-card-body">
-            <h4 className="mb-4">Lisa Cudrow</h4>
+            <h4 className="mb-4">Kunal Joshi</h4>
             <hr />
             <p className="dark-grey-text mt-4">
               <MDBIcon fas icon="quote-left" className="pe-2 custom-quote-icon" />
-              Neque cupiditate assumenda in maiores repudi mollitia
-              architecto.
+              I’ve never seen such a personalized learning experience! Future Fit understands my strengths and weaknesses and offers exactly what I need to succeed. Truly revolutionary!
             </p>
           </MDBCardBody>
         </MDBCard>
@@ -71,18 +69,17 @@ export default function Testimonial() {
           ></div>
           <div className="custom-avatar mx-auto bg-white">
             <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+              src="https://media.istockphoto.com/id/1369754239/photo/university-student-in-white-background-stock-photo.jpg?s=612x612&w=0&k=20&c=LjFVDfjusWBjYTNliHV9DyXfApPGc8DmgBGEtfVgQ0Q="
               className="rounded-circle img-fluid"
-              alt="John Smith"
+              alt="Meera Nair"
             />
           </div>
           <MDBCardBody className="custom-card-body">
-            <h4 className="mb-4">John Smith</h4>
+            <h4 className="mb-4">Meera Nair</h4>
             <hr />
             <p className="dark-grey-text mt-4">
               <MDBIcon fas icon="quote-left" className="pe-2 custom-quote-icon" />
-              Delectus impedit saepe officiis ab aliquam repellat rem unde
-              ducimus.
+              The use of modern tools like AI-driven recommendations and gamified learning sets Future Fit apart. It’s exciting to see education meet innovation like this!
             </p>
           </MDBCardBody>
         </MDBCard>
