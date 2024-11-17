@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import { toast } from "react-hot-toast";
+
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { login } from "../auth/authslice";
+import { login, reset } from "../auth/authslice";
 import "./LoginPage.css";
 
 export default function LoginPage() {
@@ -16,9 +18,22 @@ export default function LoginPage() {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const dispatch = useDispatch();
-  const { user, isLoading, isSuccess, message } = useSelector(
+  const navigate = useNavigate();
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
   );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+    if (isSuccess || user) {
+      toast.success("Registration successful!");
+      navigate("/");
+    }
+    dispatch(reset());
+  }, [isError, isSuccess, user, message, navigate, dispatch]);
+
   const { email, password } = formData;
   const validateForm = () => {
     if (!emailRegex.test(email)) {
