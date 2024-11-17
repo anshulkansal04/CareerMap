@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -91,7 +90,7 @@ export default function LoginPage() {
       <form onSubmit={submitHandler} className="login-app-container">
         <div className="login-left-panel">
           <button type="button" className="login-back-button">
-            <ArrowLeft size={20} />
+            <Link to="/" ><ArrowLeft size={20} /></Link>
           </button>
           <div className="login-sign-up-link">
             Not a member?{" "}
@@ -105,7 +104,6 @@ export default function LoginPage() {
 
           <div className="login-login-form">
             <h1 className="login-title">Login</h1>
-            <p className="login-subtitle">Welcome back to Easymail</p>
 
             <label htmlFor="email" className="login-label">
               <p>

@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="footer-section">
           <h4 className="footer-heading">Quick Links</h4>
           <ul className="footer-links">
-            {["Home", "Info of NEP", "Features", "Testimonials", "About Us"].map((item) => (
+            {["Home", " Policy Insights ", "Features", "Testimonials", "About Us"].map((item) => (
               <li key={item}>
                 <a href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>{item}</a>
               </li>

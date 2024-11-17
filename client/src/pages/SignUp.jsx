@@ -98,7 +98,7 @@ export default function SignUp() {
       <form onSubmit={submitHandler} className="signup-app-container">
         <div className="signup-left-panel">
           <button type="button" className="signup-back-button">
-            <ArrowLeft size={20} />
+          <Link to="/" ><ArrowLeft size={20} /></Link>
           </button>
           <div className="signup-sign-in-link">
             Already a member?{" "}
