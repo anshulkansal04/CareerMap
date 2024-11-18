@@ -12,7 +12,8 @@ import PersonalInfoForm from "./pages/PersonalInfoForm";
 import EducationDetailsForm from "./pages/EducationDetailsForm";
 import ExtraDetailsForm from "./pages/ExtraDetailsForm";
 import CollegePred from "./pages/CollegePred"; // Ensure this component exists
-import Mmind from "./pages/MindMap"; // Ensure this component exists
+// import Mmind from "./pages/MindMap"; // Ensure this component exists
+import GraphPage from "./pages/Graph_Page";
 import Scholarpage from "./pages/ScholarShip"; // Ensure this component exists
 import Footer from "./Components/Footer";
 
@@ -41,7 +42,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/collegeprediction" element={<CollegePred />} />
-          <Route path="/careermap" element={<Mmind />} />
+          <Route path="/careermap" element={<GraphPage />} />
           <Route path="/scholarship" element={<Scholarpage />} />
         </Routes>
       </Router>
