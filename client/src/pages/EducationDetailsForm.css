@@ -1,101 +1,141 @@
 /* Container */
 .education-form-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-    background-color: #f0f2f5;
-  }
-  
-  /* Banner Image */
-  .personal-banner {
-    width: 100%;
-    position: relative;
-    margin-bottom: 20px;
-  }
-  
-  .personal-banner-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .personal-logo {
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    font-size: 20px;
-    color: white;
-    font-weight: bold;
-  }
-  
-  /* Heading */
-  .education-heading {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    color: #333;
-    margin: 20px 0;
-  }
-  
-  /* Form */
-  .education-form {
-    width: 100%;
-    background-color: white;
-    padding: 30px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .education-form-group {
-    margin-bottom: 20px;
-  }
-  
-  .education-input {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-top: 5px;
-  }
-  
-  .education-add-button {
-    padding: 10px 15px;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .education-add-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Grouped fields */
-  .subject-group, .exam-group {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .education-next-button {
-    padding: 14px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 18px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .education-next-button:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+/* Image Section */
+.education-banner {
+  width: 100%;
+  position: relative;
+}
+
+.education-banner-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Heading Section */
+.education-heading {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.education-heading h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Form Section */
+.education-form {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.education-form-group {
+  margin-bottom: 20px;
+}
+
+.education-form-group label {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.education-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.education-input:focus {
+  border-color: #ff5a5f;
+  outline: none;
+}
+
+/* Marks Section */
+.marks-section h3 {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.marks-row {
+  margin-bottom: 20px;
+}
+
+.marks-row h4 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.marks-inputs {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.marks-input {
+  flex: 1;
+  min-width: 150px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Additional Details */
+.additional-details h3 {
+  font-size: 18px;
+  color: #444;
+  margin: 20px 0;
+}
+
+.additional-details label {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.additional-details input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+/* Submit Button */
+.education-submit-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.education-submit-button:hover {
+  background-color: #0056b3;
+}
