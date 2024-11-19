@@ -244,7 +244,7 @@
 }
 
 .college-modal {
-  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+  /* background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%); */
   padding: 2rem;
   border-radius: 1rem;
   max-width: 800px;
@@ -290,6 +290,35 @@
   background-color: var(--danger-hover);
   transform: scale(1.05);
 }
+.detail-label{
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 10px;
+}
+
+.facility-item {
+  background-color: #f0f4ff; /* Light blue background for better aesthetics */
+  border: 1px solid #d1d5db; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+  color: #1f2937; /* Darker text for contrast */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.facility-item:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
 
 @keyframes collegeFadeIn {
   from {

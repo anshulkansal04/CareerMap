@@ -2,159 +2,216 @@ import React, { useState } from "react";
 import "./EducationDetailsForm.css";
 
 function EducationDetailsForm() {
-  const [selectedClass, setSelectedClass] = useState("");
-  const [subjects, setSubjects] = useState([]);
-  const [hasExam, setHasExam] = useState(false);
-  const [exams, setExams] = useState([]);
+  const [formData, setFormData] = useState({
+    currentClass: "",
+    marks: [],
+    jeeRank: "",
+    percentage: "",
+    interest: "",
+  });
 
-  const handleAddSubject = () => {
-    if (subjects.length < 5) {
-      setSubjects([...subjects, { subjectName: "", marksObtained: "", maxMarks: "" }]);
+  const interests = [
+    "Content Writing",
+    "Graphic Design",
+    "Fashion Designing",
+    "Fitness and Personal Training",
+    "Other",
+  ];
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const generateMarksFields = (currentClass) => {
+    const classRange = [];
+    for (let i = currentClass - 3; i <= currentClass; i++) {
+      classRange.push({
+        className: `Class ${i}`,
+        english: "",
+        maths: "",
+        science: "",
+        socialScience: "",
+      });
     }
+    return classRange;
   };
 
-  const handleSubjectChange = (index, field, value) => {
-    const updatedSubjects = [...subjects];
-    updatedSubjects[index][field] = value;
-    setSubjects(updatedSubjects);
+  const handleClassChange = (e) => {
+    const selectedClass = e.target.value;
+    const newMarks = selectedClass ? generateMarksFields(parseInt(selectedClass)) : [];
+    setFormData({
+      ...formData,
+      currentClass: selectedClass,
+      marks: newMarks,
+      jeeRank: "",
+      percentage: "",
+    });
   };
 
-  const handleAddExam = () => {
-    setExams([...exams, { examName: "", marksObtained: "", maxMarks: "", rank: "" }]);
-  };
-
-  const handleExamChange = (index, field, value) => {
-    const updatedExams = [...exams];
-    updatedExams[index][field] = value;
-    setExams(updatedExams);
+  const handleMarksChange = (className, subject, value) => {
+    const updatedMarks = formData.marks.map(mark =>
+      mark.className === className
+        ? { ...mark, [subject]: value }
+        : mark
+    );
+    setFormData({ ...formData, marks: updatedMarks });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Education details submitted successfully!");
+    console.log("Education Details Submitted: ", formData);
+    alert("Education details submitted!");
   };
+
+  const showJeeSection = formData.currentClass === "12";
 
   return (
     <div className="education-form-container">
-      <div className="personal-banner">
+      <div className="education-banner">
         <img
-          src="https://via.placeholder.com/600x200"
-          alt="Banner"
-          className="personal-banner-image"
+          src="/api/placeholder/600/200"
+          alt="Education Banner"
+          className="education-banner-image"
         />
-        <div className="personal-logo">Logo</div>
       </div>
 
-      <h2 className="education-heading">Education Details</h2>
+      <div className="education-heading">
+        <h2>Educational Details</h2>
+      </div>
 
       <form className="education-form" onSubmit={handleSubmit}>
         <div className="education-form-group">
-          <label className="education-label">Select Class</label>
+          <label>Select Current Class</label>
           <select
-            value={selectedClass}
-            onChange={(e) => setSelectedClass(e.target.value)}
+            name="currentClass"
+            value={formData.currentClass}
+            onChange={handleClassChange}
             className="education-input"
+            required
           >
             <option value="">Select Class</option>
-            {[...Array(12).keys()].map((i) => (
-              <option key={i + 1} value={i + 1}>
-                {i + 1}
+            {[...Array(9)].map((_, i) => (
+              <option key={i + 4} value={i + 4}>
+                Class {i + 4}
               </option>
             ))}
           </select>
         </div>
 
-        <div className="education-form-group">
-          <button type="button" className="education-add-button" onClick={handleAddSubject}>
-            Add Subject
-          </button>
-          {subjects.map((subject, index) => (
-            <div key={index} className="subject-group">
-              <input
-                type="text"
-                placeholder="Subject Name"
-                value={subject.subjectName}
-                onChange={(e) => handleSubjectChange(index, "subjectName", e.target.value)}
-                className="education-input"
-              />
-              <input
-                type="text"
-                placeholder="Marks Obtained"
-                value={subject.marksObtained}
-                onChange={(e) => handleSubjectChange(index, "marksObtained", e.target.value)}
-                className="education-input"
-              />
-              <input
-                type="text"
-                placeholder="Max Marks"
-                value={subject.maxMarks}
-                onChange={(e) => handleSubjectChange(index, "maxMarks", e.target.value)}
-                className="education-input"
-              />
-            </div>
-          ))}
-        </div>
-
-        <div className="education-form-group">
-          <label className="education-label">Have you given any competitive exams?</label>
-          <div>
-            <label>
-              <input
-                type="radio"
-                name="hasExam"
-                value="no"
-                checked={!hasExam}
-                onChange={() => setHasExam(false)}
-              />
-              No
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="hasExam"
-                value="yes"
-                checked={hasExam}
-                onChange={() => setHasExam(true)}
-              />
-              Yes
-            </label>
-          </div>
-        </div>
-
-        {hasExam && (
-          <div className="education-form-group">
-            <button type="button" className="education-add-button" onClick={handleAddExam}>
-              Add Exam
-            </button>
-            {exams.map((exam, index) => (
-              <div key={index} className="exam-group">
-                <input
-                  type="text"
-                  placeholder="Exam Name"
-                  value={exam.examName}
-                  onChange={(e) => handleExamChange(index, "examName", e.target.value)}
-                  className="education-input"
-                />
-                <input
-                  type="text"
-                  placeholder="Marks Obtained"
-                  value={exam.marksObtained}
-                  onChange={(e) => handleExamChange(index, "marksObtained", e.target.value)}
-                  className="education-input"
-                />
-                <input
-                  type="text"
-                  placeholder="Max Marks / Rank"
-                  value={exam.maxMarks}
-                  onChange={(e) => handleExamChange(index, "maxMarks", e.target.value)}
-                  className="education-input"
-                />
+        {formData.marks.length > 0 && (
+          <div className="marks-section">
+            <h3>Enter Marks for Last Four Classes</h3>
+            {formData.marks.map((mark) => (
+              <div key={mark.className} className="marks-row">
+                <h4>{mark.className}</h4>
+                <div className="marks-inputs">
+                  <input
+                    type="number"
+                    placeholder="English Marks"
+                    value={mark.english}
+                    onChange={(e) =>
+                      handleMarksChange(mark.className, "english", e.target.value)
+                    }
+                    className="marks-input"
+                    required
+                    min="0"
+                    max="100"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Maths Marks"
+                    value={mark.maths}
+                    onChange={(e) =>
+                      handleMarksChange(mark.className, "maths", e.target.value)
+                    }
+                    className="marks-input"
+                    required
+                    min="0"
+                    max="100"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Science Marks"
+                    value={mark.science}
+                    onChange={(e) =>
+                      handleMarksChange(mark.className, "science", e.target.value)
+                    }
+                    className="marks-input"
+                    required
+                    min="0"
+                    max="100"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Social Science Marks"
+                    value={mark.socialScience}
+                    onChange={(e) =>
+                      handleMarksChange(mark.className, "socialScience", e.target.value)
+                    }
+                    className="marks-input"
+                    required
+                    min="0"
+                    max="100"
+                  />
+                </div>
               </div>
             ))}
           </div>
         )}
 
-        <button type="submit" className="education-next-button">
+        {showJeeSection && (
+          <div className="additional-details">
+            <h3>12th Class Additional Details</h3>
+            <div className="education-form-group">
+              <label>JEE Rank (if applicable)</label>
+              <input
+                type="number"
+                name="jeeRank"
+                placeholder="Enter JEE Rank"
+                value={formData.jeeRank}
+                onChange={handleInputChange}
+                className="education-input"
+                min="1"
+              />
+            </div>
+            <div className="education-form-group">
+              <label>12th Percentage</label>
+              <input
+                type="number"
+                name="percentage"
+                placeholder="Enter Percentage"
+                value={formData.percentage}
+                onChange={handleInputChange}
+                className="education-input"
+                required
+                min="0"
+                max="100"
+                step="0.01"
+              />
+            </div>
+          </div>
+        )}
+
+        <div className="education-form-group">
+          <label>Select Interest</label>
+          <select
+            name="interest"
+            value={formData.interest}
+            onChange={handleInputChange}
+            className="education-input"
+            required
+          >
+            <option value="">Select Interest</option>
+            {interests.map((interest) => (
+              <option key={interest} value={interest}>
+                {interest}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <button type="submit" className="education-submit-button">
           Next
         </button>
       </form>
