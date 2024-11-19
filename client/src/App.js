@@ -16,6 +16,7 @@ import ExtraDetailsForm from "./pages/ExtraDetailsForm";
 import GraphPage from "./pages/Graph_Page";
 import Scholarpage from "./pages/ScholarShip"; // Ensure this component exists
 import Footer from "./Components/Footer";
+import Dash from "./pages/Dashboard";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           {/* <Route path="/collegeprediction" element={<CollegePred />} /> */}
           <Route path="/careermap" element={<GraphPage />} />
           <Route path="/scholarship" element={<Scholarpage />} />
+          <Route path="/dashboard" element={<Dash />} />
         </Routes>
       </Router>
       <Toaster />
