@@ -1,98 +1,72 @@
-/* Container */
-.personal-form-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100%;
-  background-color: #f0f2f5;
+
+*/
+/* General Form Container Styles */
+.form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Banner Image */
-.personal-banner {
-  width: 100%;
-  position: relative;
+/* Form Title */
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
   margin-bottom: 20px;
 }
 
-.personal-banner-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.personal-logo {
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  font-size: 20px;
-  color: white;
-  font-weight: bold;
-}
-
-/* Heading */
-.personal-heading {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  color: #333;
-  margin: 20px 0;
-}
-
-/* Form */
-.personal-form {
-  width: 100%;
-  background-color: white;
-  padding: 30px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+/* Form Group Styles */
+.form-group {
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
 }
 
-.personal-name-group,
-.personal-location-group {
-  display: flex;
-  gap: 10px;
-}
-
-.personal-form-group {
-  margin-bottom: 15px;
-}
-
-.personal-input {
-  width: 100%;
-  padding: 12px;
+/* Labels */
+.form-group label {
   font-size: 16px;
-  border: 1px solid #ddd;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Input Fields */
+.form-group input {
+  height: 40px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+  border: 1px solid #ccc;
   border-radius: 4px;
+  outline: none;
   transition: border-color 0.3s ease;
 }
 
-.personal-input:focus {
-  border-color: #ff5a5f;
-  outline: none;
+/* Input Field Focus State */
+.form-group input:focus {
+  border-color: #007bff;
 }
 
-.personal-error {
-  color: #ff4d4f;
-  font-size: 12px;
-  margin-top: 5px;
-  display: block;
-}
-
-/* Next Button */
-.personal-next-button {
+/* Submit Button */
+.submit-button {
   width: 100%;
-  padding: 14px;
-  background-color: #ff5a5f;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: bold;
   color: #fff;
-  font-size: 18px;
+  background-color: #007bff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
-.personal-next-button:hover {
-  background-color: #e6555a;
+/* Submit Button Hover State */
+.submit-button:hover {
+  background-color: #0056b3;
 }
