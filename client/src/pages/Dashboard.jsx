@@ -8,6 +8,8 @@ import {
   FileText,
   Edit,
 } from "lucide-react";
+import Sample1 from "./Sample1";
+import Sample2 from "./Sample2";
 import "./Dash.css";
 import {
   LineChart,
@@ -55,9 +57,9 @@ function App() {
       case "home":
         return <HomePage />;
       case "userInfo":
-        return <UserInformationPage />;
+        return <Sample1 />;
       case "marks":
-        return <MarksAnalysisPage />;
+        return <Sample2 />;
       case "quickActions":
         return <QuickActionsPage />;
       default:
@@ -139,110 +141,6 @@ function HomePage() {
   );
 }
 
-function UserInformationPage() {
-  const [userDetails, setUserDetails] = useState(userData);
-  const [isEditing, setIsEditing] = useState(false);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setUserDetails((prev) => ({ ...prev, [name]: value }));
-  };
-
-  return (
-    <div className="-user-container">
-      <h1 className="-page-title">User Information</h1>
-      <div className="-user-card">
-        <div className="-user-grid">
-          {Object.entries(userDetails).map(([key, value]) => (
-            <div key={key} className="-user-field">
-              <strong className="-field-label">
-                {key.charAt(0).toUpperCase() + key.slice(1)}:
-              </strong>
-              {isEditing ? (
-                <input
-                  type="text"
-                  name={key}
-                  value={value}
-                  onChange={handleInputChange}
-                  className="-field-input"
-                />
-              ) : (
-                <span className="-field-value">{value}</span>
-              )}
-            </div>
-          ))}
-        </div>
-        <button
-          className="-edit-button"
-          onClick={() => setIsEditing(!isEditing)}
-        >
-          {isEditing ? "Save Changes" : "Edit Information"}
-        </button>
-      </div>
-    </div>
-  );
-}
-
-function MarksAnalysisPage() {
-  return (
-    <div className="-marks-container">
-      <h1 className="-page-title">Marks Analysis</h1>
-      <div className="-chart-card">
-        <ResponsiveContainer width="100%" height={400}>
-          <LineChart
-            data={marksData}
-            margin={{ top: 20, right: 30, left: 20, bottom: 10 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="class" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line
-              type="monotone"
-              dataKey="English"
-              stroke="#3498db"
-              strokeWidth={2}
-              activeDot={{ r: 8 }}
-            />
-            <Line
-              type="monotone"
-              dataKey="Maths"
-              stroke="#2ecc71"
-              strokeWidth={2}
-              activeDot={{ r: 8 }}
-            />
-            <Line
-              type="monotone"
-              dataKey="Science"
-              stroke="#e74c3c"
-              strokeWidth={2}
-              activeDot={{ r: 8 }}
-            />
-            <Line
-              type="monotone"
-              dataKey="SocialScience"
-              stroke="#f1c40f"
-              strokeWidth={2}
-              activeDot={{ r: 8 }}
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-      <div className="-marks-grid">
-        {marksData.map((item, index) => (
-          <div key={index} className="-marks-card">
-            <h3 className="-marks-title">{item.class}</h3>
-            <p className="-marks-value">English: {item.English}%</p>
-            <p className="-marks-value">Maths: {item.Maths}%</p>
-            <p className="-marks-value">Science: {item.Science}%</p>
-            <p className="-marks-value">SocialScience: {item.SocialScience}%</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 function QuickActionsPage() {
   const generatePDF = () => {
