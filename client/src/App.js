@@ -17,6 +17,7 @@ import GraphPage from "./pages/Graph_Page";
 import Scholarpage from "./pages/ScholarShip"; // Ensure this component exists
 import Footer from "./Components/Footer";
 import Dash from "./pages/Dashboard";
+import Whoweare from "./pages/Whoweare";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
                 <Navbar />
                 <Hero />
                 <Carousel />
-                <CardContainer />
+                {/* <CardContainer /> */}
                 <Testimonal />
                 <Footer />
               </>
@@ -46,6 +47,7 @@ function App() {
           <Route path="/careermap" element={<GraphPage />} />
           <Route path="/scholarship" element={<Scholarpage />} />
           <Route path="/dashboard" element={<Dash />} />
+          <Route path="/who-we-are" element={<Whoweare />} />
         </Routes>
       </Router>
       <Toaster />

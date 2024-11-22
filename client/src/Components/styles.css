@@ -139,7 +139,7 @@ body {
 /*Hero Section Styles */
 
 .edu-hero {
-  min-height: 100vh;
+  min-height: 80vh;
   margin-top: 40px;
   background: var(--background-color);
   position: relative;
@@ -172,7 +172,7 @@ body {
   z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 9rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
