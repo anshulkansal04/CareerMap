@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../auth/authslice";
@@ -15,40 +15,51 @@ export default function Navbar() {
     navigate("/login");
   };
 
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Rank to College", path: "/CollegePred" },
+    { name: "Mind Map", path: "/careermap" },
+    { name: "About us", path: "/who-we-are" },
+  ];
+
   return (
     <header className="nep-navbar">
       <div className="container-nav nep-navbar-content">
         <div className="nep-navbar-logo">
-          <span className="nep-navbar-brand">Future Fit</span>
+            NEP Future Fit
         </div>
         <nav className="nep-navbar-links">
-          {[
-            "Home",
-            " Policy Insights ",
-            "Our Offerings ",
-            "Testimonials",
-            "Who We Are",
-          ].map((item) => (
-            <a
-              href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-              key={item}
-              className="nep-navbar-link"
+          {navLinks.map((link) => (
+            <NavLink
+              to={link.path}
+              key={link.name}
+              className={({ isActive }) =>
+                `nep-navbar-link ${isActive ? "active" : ""}`
+              }
             >
-              {item}
-            </a>
+              {link.name}
+            </NavLink>
           ))}
         </nav>
         <div className="nep-navbar-actions">
           {user ? (
-            <button onClick={handleLogout} className="nep-navbar-cta logout">
+            <button
+              onClick={handleLogout}
+              className="nep-navbar-cta logout"
+              aria-label="Logout"
+            >
               <FaSignOutAlt /> Logout
             </button>
           ) : (
             <>
-              <Link to="/login" className="nep-navbar-cta login">
+              <Link to="/login" className="nep-navbar-cta login" aria-label="Login">
                 <FaSignInAlt /> Login
               </Link>
-              <Link to="/signup" className="nep-navbar-cta register">
+              <Link
+                to="/signup"
+                className="nep-navbar-cta register"
+                aria-label="Register"
+              >
                 <FaUser /> Register
               </Link>
             </>

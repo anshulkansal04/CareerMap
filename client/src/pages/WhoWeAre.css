@@ -1,0 +1,125 @@
+  
+  .who-we-are {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    color: #333;
+  }
+  
+  .header-section {
+    margin-top: 60px;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #e8f4fc;
+    border-radius: 8px;
+  }
+  
+  .header-section h1 {
+    font-size: 2.5rem;
+    color: #4b6cb7;
+  }
+  
+  .header-section .vision {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .what-we-do {
+    margin: 30px 0;
+  }
+  
+  .what-we-do h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #4b6cb7;
+  }
+  
+  .what-we-do ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .what-we-do li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+  
+  .features {
+    background-color: #eaf7ff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    color: #4b6cb7;
+    margin-bottom: 15px;
+  }
+  
+  .features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .feature-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .feature-item h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .why-choose-us {
+    margin: 30px 0;
+  }
+  
+  .why-choose-us h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #0077b6;
+  }
+  
+  .why-choose-us ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .why-choose-us li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+  
+  .cta {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #182848, #4b6cb7);
+    color: #fff;
+    border-radius: 8px;
+  }
+  
+  .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #4b6cb7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cta-button:hover {
+    transform: scale(1.05);
+  }
+  
