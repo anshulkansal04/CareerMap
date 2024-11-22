@@ -81,7 +81,7 @@ export default function SignUp() {
     }
     if (isSuccess || user) {
       toast.success("Registration successful!");
-      navigate("/");
+      navigate("/personalInfo");
     }
     dispatch(reset());
   }, [isError, isSuccess, user, message, navigate, dispatch]);

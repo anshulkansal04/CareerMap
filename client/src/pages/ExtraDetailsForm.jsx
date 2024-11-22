@@ -1,121 +1,86 @@
-import React, { useState } from "react";
-import "./ExtraDetailsForm.css";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import "./ExtraDetailsForm.css"; // Add your CSS for styling
 
-function ExtraDetailsForm() {
-  const [formData, setFormData] = useState({
-    familyIncome: "",
-    sportInterest: "",
-    preferredState: "",
-    otherSport: "",
-  });
+const ExtraDetailsForm = () => {
+  const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
 
-  const sportsOptions = [
-    "Cricket", "Football", "Basketball", "Badminton", "Tennis", "Swimming", 
-    "Athletics", "Hockey", "Table Tennis", "Volleyball"
-  ];
+  const submitExtraDetails = async (data) => {
+    try {
+      console.log("Extra Details Submitted: ", data);
 
-  const statesOptions = [
-    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", 
-    "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", 
-    "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", 
-    "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", 
-    "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
-  ];
+      const response = await fetch("http://localhost:5000/api/users/extraDetails", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      console.log(data);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Extra details submitted successfully!");
+      console.log("Form submission successful!", await response.json());
+      navigate("/dashboard"); 
+    } catch (error) {
+      console.error("Error during form submission:", error);
+    }
   };
 
   return (
-    <div className="extra-details-form-container">
-      <div className="personal-banner">
-        <img
-          src="https://via.placeholder.com/600x200"
-          alt="Banner"
-          className="personal-banner-image"
-        />
-        <div className="personal-logo">Logo</div>
-      </div>
-
-      <h2 className="extra-details-heading">Extra Details</h2>
-
-      <form className="extra-details-form" onSubmit={handleSubmit}>
-        <div className="extra-details-form-group">
-          <label className="extra-details-label">Family Income</label>
+    <div className="form-container">
+      <h2 className="form-title">Extra Details Form</h2>
+      <form onSubmit={handleSubmit(submitExtraDetails)} className="form">
+        <div className="form-group">
+          <label htmlFor="familyIncome">Family Income</label>
           <input
             type="text"
-            name="familyIncome"
             placeholder="Enter Family Income"
-            value={formData.familyIncome}
-            onChange={handleInputChange}
-            className="extra-details-input"
+            {...register("familyIncome")}
             required
           />
         </div>
 
-        <div className="extra-details-form-group">
-          <label className="extra-details-label">Sports Interested In</label>
-          <select
-            name="sportInterest"
-            value={formData.sportInterest}
-            onChange={handleInputChange}
-            className="extra-details-input"
-            required
-          >
-            <option value="">Select a Sport</option>
-            {sportsOptions.map((sport, index) => (
-              <option key={index} value={sport}>
-                {sport}
-              </option>
-            ))}
+        <div className="form-group">
+          <label htmlFor="sportInterest">Sport Interest</label>
+          <select {...register("sportInterest")} required>
+            <option value="">Select Sport Interest</option>
+            <option value="football">Football</option>
+            <option value="basketball">Basketball</option>
+            <option value="cricket">Cricket</option>
+            <option value="other">Other</option>
           </select>
         </div>
 
-        <div className="extra-details-form-group">
-          <label className="extra-details-label">Others (if any)</label>
+        <div className="form-group">
+          <label htmlFor="otherSport">Other Sport (if applicable)</label>
           <input
             type="text"
-            name="otherSport"
             placeholder="Enter Other Sport"
-            value={formData.otherSport}
-            onChange={handleInputChange}
-            className="extra-details-input"
+            {...register("otherSport")}
           />
         </div>
 
-        <div className="extra-details-form-group">
-          <label className="extra-details-label">Preferred State</label>
-          <select
-            name="preferredState"
-            value={formData.preferredState}
-            onChange={handleInputChange}
-            className="extra-details-input"
+        <div className="form-group">
+          <label htmlFor="preferredState">Preferred State</label>
+          <input
+            type="text"
+            placeholder="Enter Preferred State"
+            {...register("preferredState")}
             required
-          >
-            <option value="">Select a State</option>
-            {statesOptions.map((state, index) => (
-              <option key={index} value={state}>
-                {state}
-              </option>
-            ))}
-          </select>
+          />
         </div>
 
-        <button type="submit" className="extra-details-submit-button">
+        <button type="submit" className="submit-button">
           Submit
         </button>
       </form>
     </div>
   );
-}
+};
 
 export default ExtraDetailsForm;

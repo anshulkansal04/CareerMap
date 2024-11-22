@@ -18,6 +18,9 @@ import Scholarpage from "./pages/ScholarShip"; // Ensure this component exists
 import Footer from "./Components/Footer";
 import Dash from "./pages/Dashboard";
 import Whoweare from "./pages/Whoweare";
+import Sample1 from "./pages/Sample1";
+import Sample2 from "./pages/Sample2";
+import Sample3 from "./pages/Sample3";
 
 function App() {
   return (
@@ -48,6 +51,9 @@ function App() {
           <Route path="/scholarship" element={<Scholarpage />} />
           <Route path="/dashboard" element={<Dash />} />
           <Route path="/who-we-are" element={<Whoweare />} />
+          <Route path="/sample1" element={<Sample1/>} />
+          <Route path="/sample2" element={<Sample2/>} />
+          <Route path="/sample3" element={<Sample3/>} />
         </Routes>
       </Router>
       <Toaster />
