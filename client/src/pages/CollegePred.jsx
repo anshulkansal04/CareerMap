@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   LineChart,
   Line,
@@ -9,10 +9,9 @@ import {
   Legend,
 } from "recharts";
 import "./CollegePred.css";
-import Navbar from "../Components/Navbar";
 
-export default function CollegePredictor() {
-  const [rank, setRank] = useState("");
+export default function CollegePredictor({ initialRank }) {
+  const [rank, setRank] = useState(initialRank || '');
   const [selectedCourse, setSelectedCourse] = useState("");
   const [colleges, setColleges] = useState([]);
   const [selectedCollege, setSelectedCollege] = useState(null);
@@ -28,6 +27,10 @@ export default function CollegePredictor() {
     "Electronics and Communication Engineering",
     "Chemical Engineering",
   ];
+
+  useEffect(() => {
+    setRank(initialRank);
+  }, [initialRank]);
 
   const getRowClassName = (index) => {
     const baseClass = "college-row";
@@ -47,7 +50,7 @@ export default function CollegePredictor() {
     setColleges([]);
 
     try {
-      const response = await fetch("http://localhost:5000/api/colleges", {
+      const response = await fetch("http://localhost:4000/api/colleges", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -109,21 +112,23 @@ export default function CollegePredictor() {
 
   return (
     <>
-      <Navbar />
       <div className="college-bg">
         <div className="college-container">
-          <h1 className="college-page-title">College Cutoff Analyzer</h1>
 
           <form onSubmit={handleSubmit} className="college-form">
             <div className="college-form-group">
-              <label className="college-form-label">Enter Your Rank:</label>
+              <label className="college-form-label">Your Rank:</label>
               <input
                 type="number"
                 value={rank}
-                onChange={(e) => setRank(e.target.value)}
-                required
+                readOnly
                 className="college-form-input"
-                placeholder="Enter your rank"
+                // type="number"
+                // value={rank}
+                // onChange={(e) => setRank(e.target.value)}
+                // required
+                // className="college-form-input"
+                // placeholder="Enter your rank"
                 disabled={loading}
               />
             </div>
