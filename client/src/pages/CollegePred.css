@@ -55,6 +55,7 @@
   border: 2px solid #e2e8f0;
   border-radius: 0.5rem;
   font-size: 1rem;
+  font-weight: 400;
   transition: all 0.3s ease;
   background-color: white;
 }
@@ -67,7 +68,7 @@
 }
 
 .college-form-input::placeholder {
-  color: #64748b;
+  color: black;
 }
 
 .college-submit-btn {
@@ -160,7 +161,7 @@
 }
 
 .college-name-cell {
-  color: #1e293b;
+  color: white;
   font-weight: 500;
 }
 
@@ -271,8 +272,12 @@
 .detail-label {
   font-weight: 600;
   font-size: 15px;
+  color: #bebebe;
 }
 
+.detail-value{
+  color: white;
+}
 /* Facilities Grid */
 .facilities-grid {
   display: grid;
@@ -403,21 +408,11 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #0f172a;
-    color: #e2e8f0;
-  }
 
   .college-form,
   .college-table-container,
   .college-modal {
     background-color: #1e293b;
-  }
-
-  .college-form-input,
-  .college-form-select {
-    background-color: #2d3748;
-    color: #e2e8f0;
   }
 
   .college-row:nth-child(even) {

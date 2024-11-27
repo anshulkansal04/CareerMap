@@ -121,14 +121,9 @@ export default function CollegePredictor({ initialRank }) {
               <input
                 type="number"
                 value={rank}
-                readOnly
                 className="college-form-input"
-                // type="number"
-                // value={rank}
-                // onChange={(e) => setRank(e.target.value)}
-                // required
-                // className="college-form-input"
-                // placeholder="Enter your rank"
+                onChange={(e) => setRank(e.target.value)}
+                required
                 disabled={loading}
               />
             </div>
@@ -297,7 +292,7 @@ export default function CollegePredictor({ initialRank }) {
                   </div>
                   <div className="college-facilities">
                     <h3>
-                      <strong>Facilities</strong>
+                      <strong style={{color : `white`}}>Facilities</strong>
                     </h3>
                     <div className="facilities-grid">
                       {selectedCollege.details.facilities.map(

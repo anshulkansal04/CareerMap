@@ -48,7 +48,7 @@ const Hero = () => {
         <div className="edu-hero-text">
           <h1 className="edu-hero-title">
             <span className="edu-hero-title-welcome">Welcome To</span>
-            <span className="edu-hero-title-future">Future Fit</span>
+            <span className="edu-hero-title-future">NEP Future Fit</span>
           </h1>
           <animated.p style={fadeAnimation} className="edu-hero-fact">
             Did you know? {educationalFacts[factIndex]}

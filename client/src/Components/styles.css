@@ -1,32 +1,21 @@
 /* Global Styles */
-:root {
-  --primary-color: #4b6cb7;
-  --secondary-color: #182848;
-  --highlight-color: #f39c12;
-  --text-color: #2c3e50;
-  --background-color: #f5f6fa;
-  --white: #ffffff;
-  --nav-hover: #e67e22;
-  --transition: all 0.3s ease-in-out;
-  --complementary-color: #b74b6c;
-}
 
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  /* background-color: #f5f6fa;
+  color: #2c3e50; */
 }
 
 /* Navbar Styles */
 .nep-navbar {
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(45deg, #4b6cb7, #182848);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 100;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -42,8 +31,9 @@ body {
 .nep-navbar-logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: var(--white);
+  color: #ffffff;
   text-transform: uppercase;
+  margin-left: 18px;
 }
 
 .nep-navbar-links {
@@ -52,7 +42,7 @@ body {
 }
 
 .nep-navbar-link {
-  color: var(--white);
+  color: #ffffff;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -67,7 +57,7 @@ body {
   height: 3px;
   bottom: -5px;
   left: 50%;
-  background: var(--highlight-color);
+  background: #f39c12;
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -88,23 +78,23 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s ease-in-out;
 }
 
 .nep-navbar-cta.login {
-  background-color: var(--highlight-color);
-  color: var(--white);
+  background-color: #f39c12;
+  color: #ffffff;
 }
 
 .nep-navbar-cta.register {
-  background-color: var(--white);
-  color: var(--highlight-color);
-  border: 2px solid var(--highlight-color);
+  background-color: #ffffff;
+  color: #f39c12;
+  border: 2px solid #f39c12;
 }
 
 .nep-navbar-cta.logout {
   background-color: #e74c3c;
-  color: var(--white);
+  color: #ffffff;
 }
 
 .nep-navbar-cta:hover {
@@ -141,7 +131,7 @@ body {
 .edu-hero {
   min-height: 80vh;
   margin-top: 40px;
-  background: var(--background-color);
+  background: #f5f6fa;
   position: relative;
   overflow: hidden;
 }
@@ -152,7 +142,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, var(--background-color) 0%, var(--white) 100%);
+  background: linear-gradient(45deg, #f5f6fa 0%, #ffffff 100%);
   z-index: 1;
 }
 
@@ -238,7 +228,7 @@ body {
 .floating-element:nth-child(5) { top: 80%; left: 50%; }
 
 .icon-card {
-  background: var(--white);
+  background: #ffffff;
   padding: 1rem;
   border-radius: 20px;
   display: flex;
@@ -246,7 +236,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
+  transition: all 0.3s ease-in-out;
 }
 
 .icon-card:hover {
@@ -255,13 +245,13 @@ body {
 }
 
 .icon-card .icon {
-  color: var(--primary-color);
+  color: #4b6cb7;
 }
 
 .icon-card span {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--text-color);
+  color: #2c3e50;
 }
 
 .connections {
@@ -275,7 +265,7 @@ body {
 
 .path-line {
   fill: none;
-  stroke: var(--primary-color);
+  stroke: #4b6cb7;
   stroke-width: 2;
   stroke-opacity: 0.2;
   stroke-dasharray: 10;
@@ -332,7 +322,7 @@ body {
 /* Carousel Styles */
 .nep-carousel {
   padding: 50px 0;
-  background-color: var(--white);
+  background-color: #ffffff;
 }
 
 .nep-carousel-title {
@@ -340,7 +330,7 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: var(--primary-color);
+  color: #4b6cb7;
   position: relative;
 }
 
@@ -349,16 +339,16 @@ body {
   display: block;
   width: 50px;
   height: 3px;
-  background-color: var(--secondary-color);
+  background-color: #182848;
   margin: 10px auto 0;
 }
 
 .nep-carousel-item {
-  background-color: var(--background-color);
+  background-color: #f5f6fa;
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
+  transition: all 0.3s ease-in-out;
   margin: 0 10px;
 }
 
@@ -371,18 +361,18 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--primary-color);
+  color: #4b6cb7;
 }
 
 .nep-carousel-item-content {
   font-size: 1rem;
-  color: var(--text-color);
+  color: #2c3e50;
 }
 
 /* Card Styles */
 .nep-cards {
   padding: 25px 0;
-  background-color: var(--background-color);
+  background-color: #f5f6fa;
 }
 
 .nep-cards-grid {
@@ -392,12 +382,12 @@ body {
 }
 
 .nep-card {
-  background: var(--white);
+  background: #ffffff;
   border-radius: 10px;
   padding: 2rem;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
+  transition: all 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
 }
@@ -411,7 +401,7 @@ body {
   height: 200%;
   background: linear-gradient(45deg, transparent, rgba(52, 152, 219, 0.1), transparent);
   transform: rotate(45deg);
-  transition: var(--transition);
+  transition: all 0.3s ease-in-out;
 }
 
 .nep-card:hover::before {
@@ -428,25 +418,25 @@ body {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: var(--primary-color);
+  color: #4b6cb7;
 }
 
 .nep-card-subtitle {
   font-size: 1rem;
-  color: var(--text-color);
+  color: #2c3e50;
   margin-bottom: 1.5rem;
 }
 
 .nep-card-button {
-  background-color: var(--primary-color);
-  color: var(--white);
+  background-color: #4b6cb7;
+  color: #ffffff;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 25px;
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.3s ease-in-out;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
