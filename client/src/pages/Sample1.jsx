@@ -66,7 +66,7 @@ const Sample1 = () => {
 
   if (isLoading) return <p>Loading...</p>; // Show loading state
   if (!personalData || personalData.length === 0)
-    return <p>No personal information found.</p>; // Handle no data case
+    return <p style={{ marginTop: '40px' }}>No personal information found.</p>; // Handle no data case
 
   return (
     <div className="-user-container">

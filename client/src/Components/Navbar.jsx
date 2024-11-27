@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Rank to College", path: "/CollegePred" },
+    // { name: "Rank to College", path: "/CollegePred" },
     { name: "Mind Map", path: "/careermap" },
     { name: "About us", path: "/who-we-are" },
   ];

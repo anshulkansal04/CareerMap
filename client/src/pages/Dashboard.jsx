@@ -25,6 +25,7 @@ import "./Dash.css";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import CollegePredictor from './CollegePred';
+import Navbar from "../Components/Navbar";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -124,7 +125,9 @@ function App() {
   }
 
   return (
+    <>
     <div className="-app-container">
+      <Navbar />
       <div
         className={`-sidebar ${isSidebarOpen ? "-sidebar-open" : "-sidebar-closed"
           }`}
@@ -175,6 +178,7 @@ function App() {
         {renderPage()}
       </main>
     </div>
+    </>
   );
 }
 
