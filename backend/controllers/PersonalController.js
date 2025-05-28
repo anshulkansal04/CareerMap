@@ -2,7 +2,7 @@ const PersonalInfo = require("../models/PersonalModel");
 exports.createPersonalInfo = async (req, res) => {
    
   try {
-    console.log("jbvj");
+    console.log("Request received for personal info creation");
       const { 
           firstName, 
           middleName, 
@@ -13,9 +13,9 @@ exports.createPersonalInfo = async (req, res) => {
           state, 
           city, 
           postalCode 
-
       } = req.body;
-console.log(req.body);
+    
+    console.log("Request body:", req.body);
 
       // Validate all required fields
       const requiredFields = { firstName, middleName, lastName, email, phone, gender, state, city, postalCode };
@@ -23,8 +23,14 @@ console.log(req.body);
           .filter(([_, value]) => !value)
           .map(([key]) => key);
 
+      if (missingFields.length > 0) {
+          console.log("Missing fields:", missingFields);
+          return res.status(400).json({
+              success: false,
+              message: `Missing required fields: ${missingFields.join(', ')}`
+          });
+      }
    
-      console.log("jbvj");
       // Validate email format
       const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
       if (!emailRegex.test(email)) {
@@ -60,9 +66,8 @@ console.log(req.body);
       }
 
       // Create personal info
-      console.log("jbvj");
+      console.log("Creating personal info record");
       const personalInfo = await PersonalInfo.create({
-      
           firstName,
           middleName,
           lastName,
@@ -74,6 +79,7 @@ console.log(req.body);
           postalCode
       });
 
+      console.log("Personal info created successfully:", personalInfo._id);
       return res.status(201).json({
           success: true,
           message: 'Personal information created successfully',

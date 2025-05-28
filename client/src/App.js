@@ -11,9 +11,9 @@ import "./Components/styles.css";
 import PersonalInfoForm from "./pages/PersonalInfoForm";
 import EducationDetailsForm from "./pages/EducationDetailsForm";
 import ExtraDetailsForm from "./pages/ExtraDetailsForm";
-// import CollegePred from "./pages/CollegePred"; // Ensure this component exists
+import CollegePred from "./pages/CollegePred"; // Ensure this component exists
 // import Mmind from "./pages/MindMap"; // Ensure this component exists
-import GraphPage from "./pages/Graph_Page";
+// import GraphPage from "./pages/Graph_Page";
 import Scholarpage from "./pages/ScholarShip"; // Ensure this component exists
 import Footer from "./Components/Footer";
 import Dash from "./pages/Dashboard";
@@ -46,8 +46,8 @@ function App() {
           <Route path="/extraInfo" element={<ExtraDetailsForm />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUp />} />
-          {/* <Route path="/collegeprediction" element={<CollegePred />} /> */}
-          <Route path="/careermap" element={<GraphPage />} />
+          <Route path="/collegeprediction" element={<CollegePred />} />
+          {/* <Route path="/careermap" element={<GraphPage />} /> */}
           <Route path="/scholarship" element={<Scholarpage />} />
           <Route path="/dashboard" element={<Dash />} />
           <Route path="/who-we-are" element={<Whoweare />} />
