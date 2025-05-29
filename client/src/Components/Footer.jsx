@@ -6,33 +6,38 @@ export default function Footer() {
   return (
     <footer className="nep-footer">
       <div className="container-footer">
-        <div className="footer-section">
-          <h3 className="footer-logo">Future Fit</h3>
+        <div className="footer-section footer-brand">
+          <h3 className="footer-logo">NEP Future Fit</h3>
           <p className="footer-description">
-            Empowering students through innovative learning and modern educational solutions.
+            Transforming education through NEP 2020 guidelines. Comprehensive career counselling for students.
           </p>
         </div>
 
         <div className="footer-section">
-          <h4 className="footer-heading">Quick Links</h4>
+          <h4 className="footer-heading">Navigation</h4>
           <ul className="footer-links">
-            {["Home", " Policy Insights ", "Features", "Testimonials", "About Us"].map((item) => (
-              <li key={item}>
-                <a href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}>{item}</a>
+            { [
+                { name: "Home", path: "/" },
+                { name: "Dashboard", path: "/dashboard" },
+                { name: "College Prediction", path: "/collegeprediction" },
+                { name: "Who We Are", path: "/who-we-are" },
+                { name: "Login", path: "/login" },
+                { name: "Sign Up", path: "/signup" }
+              ].map((item) => (
+              <li key={item.name}>
+                <a href={item.path}>{item.name}</a>
               </li>
-            ))}
+            )) }
           </ul>
         </div>
 
         <div className="footer-section">
-          <h4 className="footer-heading">Contact Us</h4>
-          <p>123 Learning Lane, Edu City</p>
-          <p>Email: support@futurefit.com</p>
-          <p>Phone: +1 234 567 890</p>
-        </div>
-
-        <div className="footer-section">
-          <h4 className="footer-heading">Follow Us</h4>
+          <h4 className="footer-heading">Contact & Follow</h4>
+          <div className="footer-contact">
+            <p><span className="contact-label">Email:</span> counsellor@nepfuturefit.edu</p>
+            <p><span className="contact-label">Helpline:</span> 1800-NEP-HELP</p>
+            <p><span className="contact-label">Hours:</span> Mon-Sat 9AM-7PM</p>
+          </div>
           <div className="footer-socials">
             <a href="#" className="social-link">
               <FaFacebookF />
@@ -49,8 +54,16 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      
       <div className="footer-bottom">
-        <p>&copy; 2024 Future Fit. All rights reserved.</p>
+        <div className="footer-bottom-content">
+          <p>&copy; 2024 NEP Future Fit. All rights reserved.</p>
+          <div className="footer-bottom-links">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+            {/* <a href="#nep">NEP 2020 Compliance</a> */}
+          </div>
+        </div>
       </div>
     </footer>
   );

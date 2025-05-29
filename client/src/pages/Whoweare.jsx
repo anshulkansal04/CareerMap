@@ -8,7 +8,6 @@ const WhoWeAre = () => {
   return (
     <>
       <div className="who-we-are">
-        <Navbar />
         <header className="header-section">
           <h1>Who We Are</h1>
           <p className="vision">

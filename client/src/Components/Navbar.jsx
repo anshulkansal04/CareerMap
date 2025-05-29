@@ -35,7 +35,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", path: "/", icon: <FaHome /> },
-    { name: "College Predictor", path: "/collegeprediction", icon: <FaUniversity /> },
+    // { name: "College Predictor", path: "/collegeprediction", icon: <FaUniversity /> },
     { name: "Career Map", path: "/careermap", icon: <FaBrain /> },
     { name: "Scholarships", path: "/scholarship", icon: <FaAward /> },
     { name: "About Us", path: "/who-we-are", icon: <FaInfoCircle /> },

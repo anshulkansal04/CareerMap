@@ -26,35 +26,36 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <>
-                <Navbar />
-                <Hero />
-                <Carousel />
-                {/* <CardContainer /> */}
-                <Testimonal />
-                <Footer />
-              </>
-            }
-          ></Route>
-          <Route path="/personalInfo" element={<PersonalInfoForm />} />
-          <Route path="/educationalInfo" element={<EducationDetailsForm />} />
-          <Route path="/extraInfo" element={<ExtraDetailsForm />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/collegeprediction" element={<CollegePred />} />
-          {/* <Route path="/careermap" element={<GraphPage />} /> */}
-          <Route path="/scholarship" element={<Scholarpage />} />
-          <Route path="/dashboard" element={<Dash />} />
-          <Route path="/who-we-are" element={<Whoweare />} />
-          <Route path="/sample1" element={<Sample1/>} />
-          <Route path="/sample2" element={<Sample2/>} />
-          <Route path="/sample3" element={<Sample3/>} />
-        </Routes>
+        <Navbar />
+        <div > {/* Add padding to account for fixed navbar */}
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <>
+                  <Hero />
+                  <Carousel />
+                  <Testimonal />
+                  <Footer />
+                </>
+              }
+            />
+            <Route path="/personalInfo" element={<PersonalInfoForm />} />
+            <Route path="/educationalInfo" element={<EducationDetailsForm />} />
+            <Route path="/extraInfo" element={<ExtraDetailsForm />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/collegeprediction" element={<CollegePred />} />
+            {/* <Route path="/careermap" element={<GraphPage />} /> */}
+            <Route path="/scholarship" element={<Scholarpage />} />
+            <Route path="/dashboard" element={<Dash />} />
+            <Route path="/who-we-are" element={<Whoweare />} />
+            <Route path="/sample1" element={<Sample1/>} />
+            <Route path="/sample2" element={<Sample2/>} />
+            <Route path="/sample3" element={<Sample3/>} />
+          </Routes>
+        </div>
       </Router>
       <Toaster />
     </div>
