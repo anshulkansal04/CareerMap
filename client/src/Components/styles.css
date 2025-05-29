@@ -777,13 +777,22 @@ body {
 
 /* Carousel Styles */
 .nep-carousel {
-  padding: 50px 0;
+  padding: 40px 0;
   background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.nep-carousel .container {
+  padding: 0 40px;
+  position: relative;
+  max-width: 100%;
 }
 
 .nep-carousel-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
   color: #4b6cb7;
@@ -793,39 +802,140 @@ body {
 .nep-carousel-title::after {
   content: '';
   display: block;
-  width: 50px;
+  width: 40px;
   height: 3px;
-  background-color: #182848;
+  background: linear-gradient(90deg, #4b6cb7, #182848);
   margin: 10px auto 0;
+  border-radius: 2px;
 }
 
 .nep-carousel-item {
-  background-color: #f5f6fa;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9ff;
+  border-radius: 12px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 12px rgba(75, 108, 183, 0.08);
   transition: all 0.3s ease-in-out;
   margin: 0 10px;
+  border: 1px solid rgba(75, 108, 183, 0.1);
+  height: 100%;
+  width: calc(100% - 20px) !important;
+  box-sizing: border-box;
 }
 
 .nep-carousel-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(75, 108, 183, 0.12);
 }
 
 .nep-carousel-item-title {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 1rem;
   color: #4b6cb7;
+  line-height: 1.4;
 }
 
 .nep-carousel-item-content {
-  font-size: 1rem;
-  color: #2c3e50;
+  color: #4a5568;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
-/* Card Styles */
+/* Custom Slick Carousel Styles */
+.nep-carousel .slick-slide {
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+.nep-carousel .slick-list {
+  margin: 0 -5px;
+  padding: 0 5px;
+}
+
+.nep-carousel .slick-track {
+  display: flex;
+  align-items: stretch;
+}
+
+.nep-carousel .slick-prev,
+.nep-carousel .slick-next {
+  width: 40px;
+  height: 40px;
+  background: #ffffff !important;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.nep-carousel .slick-prev:hover,
+.nep-carousel .slick-next:hover {
+  background: #4b6cb7 !important;
+}
+
+.nep-carousel .slick-prev:before,
+.nep-carousel .slick-next:before {
+  font-size: 20px;
+  color: #4b6cb7;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.nep-carousel .slick-prev:hover:before,
+.nep-carousel .slick-next:hover:before {
+  color: #ffffff;
+}
+
+.nep-carousel .slick-prev {
+  left: 0;
+}
+
+.nep-carousel .slick-next {
+  right: 0;
+}
+
+/* Dots Styling */
+.nep-carousel .slick-dots {
+  bottom: -35px;
+}
+
+.nep-carousel .slick-dots li button:before {
+  font-size: 8px;
+  color: #4b6cb7;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.nep-carousel .slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #4b6cb7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nep-carousel .container {
+    padding: 0 30px;
+  }
+  
+  .nep-carousel-item {
+    padding: 1.5rem;
+    margin: 0 5px;
+    width: calc(100% - 10px) !important;
+  }
+  
+  .nep-carousel .slick-prev,
+  .nep-carousel .slick-next {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .nep-carousel .slick-prev:before,
+  .nep-carousel .slick-next:before {
+    font-size: 18px;
+  }
+}
+
+/* New Section - Card Styles */
 .nep-cards {
   padding: 25px 0;
   background-color: #f5f6fa;
